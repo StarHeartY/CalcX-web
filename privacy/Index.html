@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CalcX 隐私声明</title>
+    <style>
+        /* 复用相同的样式代码，保证多页面体验一致 */
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #182431;
+            --text-secondary: #5c6b7c;
+            --brand-color: #0A59F7;
+            --divider-color: #e5e8ea;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #000000;
+                --text-primary: #f1f3f5;
+                --text-secondary: #a6b3c0;
+                --brand-color: #3F7AF8;
+                --divider-color: #333940;
+            }
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 0 0 20px 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 0 24px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: var(--brand-color);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p><strong>生效日期：</strong> 2026 年 6 月</p>
+        <p>CalcX 极其重视您的个人隐私。作为一款专注于提供专业计算体验的本地工具应用，我们遵循“非必要不收集”的绝对原则。</p>
+
+        <h2>1. 数据的收集与使用</h2>
+        <p><strong>零数据收集：</strong>
+            本应用所有的核心代数计算（包括高精度浮点解析与排版渲染）均完全在您的设备本地通过底层引擎实时完成。我们绝对不会在后台私自收集、记录或上传您的任何输入公式、计算结果或个人标识信息。</p>
+
+        <h2>2. 本地存储</h2>
+        <p>您的所有个性化设置（包括小数精度、颜色模式、按键排版习惯、马达振动档位等）均通过系统原生的持久化机制安全地存储在您设备的本地沙盒中。卸载应用后，这些数据将被系统彻底清除。</p>
+
+        <h2>3. 权限说明</h2>
+        <p>为了保障基础功能的正常运行，本应用仅声明了以下最基础的系统权限：</p>
+        <p><b>网络权限 (INTERNET)：</b> 仅用于加载本隐私声明、用户协议及使用帮助网页，绝对不会用于任何形式的数据回传。</p>
+        <p><b>马达权限 (VIBRATE)：</b> 仅用于在您点击计算器面板时提供自定义的触感物理反馈。</p>
+
+        <footer>
+            &copy; 2026 Yi Rui (易睿). calcx.startyi.com
+        </footer>
+    </div>
+</body>
+
+</html>
