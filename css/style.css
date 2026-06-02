@@ -1,0 +1,75 @@
+/* /css/style.css */
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #252525;
+    --brand-color: #000000;
+    --divider-color: #e5e8ea;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000000;
+        --text-primary: #ffffff;
+        --text-secondary: #c5c5c5;
+        --brand-color: #4d4d4d;
+        --divider-color: #333940;
+    }
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    padding: 0 0 20px 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    padding: 0 24px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.update-time {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--brand-color);
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+p,
+ul {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+}
