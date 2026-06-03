@@ -11,9 +11,9 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #000000;
-        --text-primary: #ffffff;
-        --text-secondary: #c0c0c0;
-        --text-tertiary: #9c9c9c;
+        --text-primary: #d6d6d6;
+        --text-secondary: #dbdbdb;
+        --text-tertiary: #bbbbbb;
         --brand-color: #ffffff;
         --divider-color: #000000;
     }
@@ -49,20 +49,22 @@ h1 {
 
 h2 {
     font-size: 18px;
-    color: var(--brand-color);
     margin-top: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
+    color: var(--brand-color);
 }
 
 h3 {
     font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     color: var(--brand-color);
-    margin-top: 16px;
-    margin-bottom: 12px;
 }
 
 p{
     font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     color: var(--text-secondary);
     margin-bottom: 12px;
 }
