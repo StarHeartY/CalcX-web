@@ -85,7 +85,8 @@ li {
 
 footer {
     margin-top: 40px;
-    font-size: 36px;
+    font-size: 12px;
+    margin-bottom: 16px;
     color: var(--text-tertiary);
     text-align: center;
 }
