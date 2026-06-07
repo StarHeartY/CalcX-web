@@ -38,7 +38,7 @@ export default function App() {
         <Section
           id="download"
           title="获取 CalculatorX"
-          subtitle="永久免费，无任何功能付费墙。现在就开启你的专业计算之旅"
+          subtitle="开源免费，无任何功能付费墙。现在就开启你的专业计算之旅"
         >
           <DownloadGuide />
         </Section>
