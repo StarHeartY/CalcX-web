@@ -51,7 +51,7 @@ export const features: Feature[] = [
     icon: '⚡',
     title: '触感反馈',
     description:
-      '自定义振动强度（1–5 档）与振动风格（清脆/轻柔），还原真实物理按键手感。搭载 HarmonyOS 系统级触控光效，每一次点击都能得到明确而舒适的反馈。',
+      '自定义振动风格，还原真实物理按键手感。搭载 HarmonyOS 系统级触控光效，每一次点击都能得到明确而舒适的反馈。',
   },
   {
     icon: '◎',
@@ -88,9 +88,9 @@ export const techLayers: TechLayer[] = [
 export const download = {
   title: '获取 CalculatorX',
   steps: [
-    '打开手机上的「华为应用市场」App',
-    '搜索「CalculatorX」或「科学计算器」',
-    '点击安装，即可免费使用全部功能',
+    // '打开手机上的「华为应用市场」App',
+    // '搜索「CalculatorX」或「科学计算器」',
+    // '点击安装，即可免费使用全部功能',
   ],
   note: '也可通过开源分发渠道获取安装包。CalculatorX 基于 GPL 3.0 协议开源，源代码完全公开，欢迎审计与贡献。',
   buttonLabel: '前往华为应用市场',
@@ -100,9 +100,9 @@ export const download = {
 export const footer = {
   copyright: 'Yi Rui (易睿)',
   links: [
-    { label: '使用帮助', href: '/help/index.html' },
-    { label: '隐私政策', href: '/privacy/index.html' },
-    { label: '用户协议', href: '/agreement/index.html' },
+      { label: '使用帮助', href: 'https://calcx.startyi.com/help/' },
+      { label: '隐私政策', href: 'https://calcx.startyi.com/privacy/' },
+      { label: '用户协议', href: 'https://calcx.startyi.com/agreement/' },
   ],
   email: 'support@startyi.com',
 } as const
