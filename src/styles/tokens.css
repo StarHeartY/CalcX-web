@@ -1,0 +1,94 @@
+/* Design Tokens — 统一的设计语言 */
+:root {
+  /* === 浅色模式 === */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f7;
+  --color-bg-tertiary: #e8e8ed;
+
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-text-tertiary: #aeaeb2;
+
+  --color-accent: #007aff;
+  --color-accent-hover: #0062cc;
+  --color-accent-light: rgba(0, 122, 255, 0.08);
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
+
+  /* === 排版 === */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+
+  --text-hero: clamp(2.5rem, 8vw, 4.5rem);
+  --text-h1: clamp(2rem, 5vw, 3rem);
+  --text-h2: clamp(1.5rem, 3vw, 2rem);
+  --text-h3: 1.25rem;
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 510;
+  --font-weight-semibold: 590;
+  --font-weight-bold: 700;
+
+  /* === 间距 === */
+  --space-section-y: clamp(4rem, 10vw, 7.5rem);
+  --space-content-max: 75rem;
+  --space-content-narrow: 48rem;
+  --space-card-gap: 1.5rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* === 圆角 === */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* === 阴影 === */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.10);
+  --shadow-button: 0 2px 8px rgba(0, 122, 255, 0.25);
+
+  /* === 过渡 === */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* === 其他 === */
+  --header-height: 3.5rem;
+}
+
+/* === 深色模式 === */
+:root[data-theme="dark"] {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #1c1c1e;
+  --color-bg-tertiary: #2c2c2e;
+
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1a6;
+  --color-text-tertiary: #6e6e73;
+
+  --color-accent: #0a84ff;
+  --color-accent-hover: #409cff;
+  --color-accent-light: rgba(10, 132, 255, 0.12);
+
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-strong: rgba(255, 255, 255, 0.20);
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.30);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.50);
+}
