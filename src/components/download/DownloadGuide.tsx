@@ -22,11 +22,21 @@ export default function DownloadGuide() {
         <div className={styles.buttons}>
           <a
             href={download.buttonUrl}
-            className={styles.button}
+            className={styles.appGalleryBadge}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {download.buttonLabel}
+            <img
+              className={styles.huaweiIcon}
+              src="/images/appgallery-icon.png"
+              alt=""
+              width="48"
+              height="48"
+            />
+            <span className={styles.badgeText}>
+              <span className={styles.badgeExplore}>EXPLORE IT ON</span>
+              <span className={styles.badgeStore}>AppGallery</span>
+            </span>
           </a>
           <a
             href="https://github.com/StarHeartY/CalculatorX"

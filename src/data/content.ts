@@ -73,7 +73,7 @@ export const techLayers: TechLayer[] = [
     name: '渲染引擎层',
     subtitle: 'WebView + MathLive',
     description:
-      'Web 组件挂载本地沙箱 HTML，搭载全离线 MathLive 数学排版引擎。支持通过 runJavaScript 进行跨端 DOM 操作与光标控制，将 LaTeX 公式渲染为教科书级排版。',
+      'Web 组件挂载本地沙箱 HTML，搭载全离线 MathLive 数学排版引擎。支持通过 runJavaScript 进行跨端 DOM 操作，将 LaTeX 公式渲染为教科书级排版。',
     tags: ['WebView', 'MathLive', 'LaTeX', 'MathJSON'],
   },
   {
@@ -93,7 +93,7 @@ export const download = {
     // '点击安装，即可免费使用全部功能',
   ],
   note: '也可通过开源分发渠道获取安装包。CalculatorX 基于 GPL 3.0 协议开源，源代码完全公开，欢迎审计与贡献。',
-  buttonLabel: '前往华为应用市场',
+    buttonLabel: 'AppGallery',
   buttonUrl: 'https://appgallery.huawei.com/',
 } as const
 
@@ -106,3 +106,5 @@ export const footer = {
   ],
   email: 'support@startyi.com',
 } as const
+
+// npm run dev
