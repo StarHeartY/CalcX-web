@@ -15,7 +15,7 @@ export interface TechLayer {
 
 export const site = {
   name: 'CalculatorX',
-  tagline: 'HarmonyOS 专业科学计算器',
+  tagline: '专业科学计算器',
   description:
     '基于 SymEngine 计算机代数系统的专业的科学计算器，支持符号计算、LaTeX 专业排版与超大数运算。',
   heroCta: '访问 GitHub',

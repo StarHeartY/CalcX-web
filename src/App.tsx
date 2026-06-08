@@ -24,7 +24,7 @@ export default function App() {
         <Section
           id="gallery"
           title="界面展示"
-          subtitle="精心适配 HarmonyOS 深浅色模式，专业排版一目了然"
+          subtitle="精心适配深浅色模式，专业排版一目了然"
         >
           <ScreenshotGallery />
         </Section>
