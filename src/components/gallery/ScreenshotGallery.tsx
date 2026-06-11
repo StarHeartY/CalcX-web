@@ -4,14 +4,19 @@ import styles from './ScreenshotGallery.module.css'
 
 const screenshots = [
   {
-    src: '/images/screenshot-light.webp',
-    alt: 'CalculatorX 浅色模式主界面',
-    label: '浅色模式',
+    src: '/images/screenshot-basic-math.webp',
+    alt: 'CalculatorX 基础数学计算',
+    label: '基础计算',
   },
   {
-    src: '/images/screenshot-dark.webp',
-    alt: 'CalculatorX 深色模式主界面',
-    label: '深色模式',
+    src: '/images/screenshot-advanced-math.webp',
+    alt: 'CalculatorX 高等数学计算',
+    label: '高等数学',
+  },
+  {
+    src: '/images/screenshot-big-digit.webp',
+    alt: 'CalculatorX 超大数字计算',
+    label: '大数计算',
   },
   {
     src: '/images/screenshot-settings.webp',

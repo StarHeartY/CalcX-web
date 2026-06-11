@@ -78,10 +78,10 @@ export const techLayers: TechLayer[] = [
   },
   {
     name: '计算引擎层',
-    subtitle: 'C++ / SymEngine',
+    subtitle: 'C++ / SymEngine / Giac',
     description:
-      'CMake 构建的底层 C++ 代数引擎，静态链接 SymEngine CAS 与 Boost 库。手写 parseAST 解析器将 MathJSON 转换为 SymEngine 表达式树，支持精确符号计算与超大数运算。',
-    tags: ['C++', 'SymEngine', 'Boost', 'N-API'],
+      'CMake 构建的底层 C++ 代数引擎，静态链接 SymEngine/Giac 与 Boost 库。手写 parseAST 解析器将 MathJSON 转换为 SymEngine 表达式树，支持精确符号计算与超大数运算。',
+    tags: ['C++', 'SymEngine', 'Giac', 'Boost', 'N-API'],
   },
 ]
 
