@@ -1,21 +1,28 @@
+/* Screenshot Gallery — horizontal scroll with snap */
 .gallery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3xl);
+  gap: var(--space-xl);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: var(--space-xs) 0;
 }
 
-@media (min-width: 1000px) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
-  }
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 
 .figure {
-  width: 100%;
-  /* max-width: 22rem; */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 85vw;
+}
+
+@media (min-width: 768px) {
+  .figure {
+    width: 48rem;
+  }
 }
 
 .frame {
@@ -24,6 +31,13 @@
   border: 1px solid var(--color-border);
   background: var(--color-bg-secondary);
   box-shadow: var(--shadow-card);
+  transition: transform var(--duration-fast) var(--ease-out-expo),
+              box-shadow var(--duration-fast) var(--ease-in-out);
+}
+
+.frame:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .frame img {

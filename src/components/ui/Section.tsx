@@ -7,12 +7,13 @@ interface SectionProps {
   subtitle?: string
   children: ReactNode
   className?: string
+  fullWidth?: boolean
 }
 
-export default function Section({ id, title, subtitle, children, className }: SectionProps) {
+export default function Section({ id, title, subtitle, children, className, fullWidth }: SectionProps) {
   return (
     <section id={id} className={`${styles.section} ${className ?? ''}`}>
-      <div className={styles.container}>
+      <div className={fullWidth ? styles.containerWide : styles.container}>
         {(title || subtitle) && (
           <header className={styles.header}>
             {title && <h2 className={styles.title}>{title}</h2>}

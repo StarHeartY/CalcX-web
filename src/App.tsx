@@ -25,6 +25,7 @@ export default function App() {
           id="gallery"
           title="界面展示"
           subtitle="精心适配深浅色模式，专业排版一目了然"
+          fullWidth
         >
           <ScreenshotGallery />
         </Section>

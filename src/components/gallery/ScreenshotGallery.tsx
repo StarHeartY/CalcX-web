@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import FadeInOnScroll from '../ui/FadeInOnScroll'
 import styles from './ScreenshotGallery.module.css'
 
@@ -47,12 +47,44 @@ function ScreenshotFrame({ src, alt, label }: { src: string; alt: string; label:
 }
 
 export default function ScreenshotGallery() {
+  const galleryRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = galleryRef.current
+    if (!el) return
+
+    const onWheel = (e: WheelEvent) => {
+      const figure = el.querySelector(`.${styles.figure}`) as HTMLElement | null
+      if (!figure) return
+
+      const gap = parseFloat(getComputedStyle(el).gap) || 0
+      const step = figure.offsetWidth + gap
+      const atStart = el.scrollLeft <= 1
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1
+
+      if (e.deltaY > 0) {
+        // Scrolling down → go right
+        if (atEnd) return // let page scroll
+        e.preventDefault()
+        el.scrollBy({ left: step, behavior: 'smooth' })
+      } else {
+        // Scrolling up → go left
+        if (atStart) return // let page scroll
+        e.preventDefault()
+        el.scrollBy({ left: -step, behavior: 'smooth' })
+      }
+    }
+
+    el.addEventListener('wheel', onWheel, { passive: false })
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [])
+
   return (
-    <div className={styles.gallery}>
+    <div className={styles.gallery} ref={galleryRef}>
       {screenshots.map((shot, i) => (
         <FadeInOnScroll
           key={shot.alt}
-          className={i === 0 ? 'fade-stagger-1' : i === 1 ? 'fade-stagger-2' : 'fade-stagger-3'}
+          className={i === 0 ? 'fade-stagger-1' : i === 1 ? 'fade-stagger-2' : i === 2 ? 'fade-stagger-3' : 'fade-stagger-4'}
         >
           <figure className={styles.figure}>
             <div className={styles.frame}>
