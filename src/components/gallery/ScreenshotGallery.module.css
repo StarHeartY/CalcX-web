@@ -5,6 +5,14 @@
   gap: var(--space-3xl);
 }
 
+@media (min-width: 1000px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+}
+
 .figure {
   width: 100%;
   /* max-width: 22rem; */
