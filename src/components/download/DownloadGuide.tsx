@@ -1,8 +1,10 @@
-import { download } from '../../data/content'
+import { useContent } from '../../i18n/LocaleContext'
 import FadeInOnScroll from '../ui/FadeInOnScroll'
 import styles from './DownloadGuide.module.css'
 
 export default function DownloadGuide() {
+  const { download } = useContent()
+
   return (
     <div className={styles.guide}>
       <ol className={styles.steps}>
@@ -45,7 +47,7 @@ export default function DownloadGuide() {
             rel="noopener noreferrer"
           >
             <span className={styles.githubIcon} aria-hidden="true" />
-            访问 GitHub
+            {download.githubButton}
           </a>
         </div>
       </FadeInOnScroll>

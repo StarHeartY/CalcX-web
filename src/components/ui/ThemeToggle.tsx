@@ -1,15 +1,17 @@
 import { useTheme } from '../../hooks/useTheme'
+import { useContent } from '../../i18n/LocaleContext'
 import styles from './ThemeToggle.module.css'
 
 export default function ThemeToggle() {
   const { theme, toggle } = useTheme()
+  const { ui } = useContent()
 
   return (
     <button
       className={styles.toggle}
       onClick={toggle}
-      aria-label={theme === 'light' ? '切换到深色模式' : '切换到浅色模式'}
-      title={theme === 'light' ? '深色模式' : '浅色模式'}
+      aria-label={theme === 'light' ? ui.switchToDark : ui.switchToLight}
+      title={theme === 'light' ? ui.themeToggleDark : ui.themeToggleLight}
     >
       {/* Sun icon */}
       <svg

@@ -1,38 +1,16 @@
 import { useState, useRef, useEffect } from 'react'
+import { useContent } from '../../i18n/LocaleContext'
 import FadeInOnScroll from '../ui/FadeInOnScroll'
 import styles from './ScreenshotGallery.module.css'
 
-const screenshots = [
-  {
-    src: '/images/screenshot-basic-math.webp',
-    alt: 'CalculatorX 基础数学计算',
-    label: '基础计算',
-  },
-  {
-    src: '/images/screenshot-advanced-math.webp',
-    alt: 'CalculatorX 高等数学计算',
-    label: '高等数学',
-  },
-  {
-    src: '/images/screenshot-big-digit.webp',
-    alt: 'CalculatorX 超大数字计算',
-    label: '大数计算',
-  },
-  {
-    src: '/images/screenshot-settings.webp',
-    alt: 'CalculatorX 设置界面',
-    label: '设置页面',
-  },
-]
-
-function ScreenshotFrame({ src, alt, label }: { src: string; alt: string; label: string }) {
+function ScreenshotFrame({ src, alt, label, preparing }: { src: string; alt: string; label: string; preparing: string }) {
   const [error, setError] = useState(false)
 
   if (error) {
     return (
       <div className={styles.placeholder}>
         <span>{label}</span>
-        <span className={styles.hint}>截图准备中…</span>
+        <span className={styles.hint}>{preparing}</span>
       </div>
     )
   }
@@ -47,6 +25,7 @@ function ScreenshotFrame({ src, alt, label }: { src: string; alt: string; label:
 }
 
 export default function ScreenshotGallery() {
+  const { screenshots, ui } = useContent()
   const galleryRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -63,13 +42,11 @@ export default function ScreenshotGallery() {
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1
 
       if (e.deltaY > 0) {
-        // Scrolling down → go right
-        if (atEnd) return // let page scroll
+        if (atEnd) return
         e.preventDefault()
         el.scrollBy({ left: step, behavior: 'smooth' })
       } else {
-        // Scrolling up → go left
-        if (atStart) return // let page scroll
+        if (atStart) return
         e.preventDefault()
         el.scrollBy({ left: -step, behavior: 'smooth' })
       }
@@ -79,16 +56,18 @@ export default function ScreenshotGallery() {
     return () => el.removeEventListener('wheel', onWheel)
   }, [])
 
+  const staggerMap = ['fade-stagger-1', 'fade-stagger-2', 'fade-stagger-3', 'fade-stagger-4']
+
   return (
     <div className={styles.gallery} ref={galleryRef}>
       {screenshots.map((shot, i) => (
         <FadeInOnScroll
           key={shot.alt}
-          className={i === 0 ? 'fade-stagger-1' : i === 1 ? 'fade-stagger-2' : i === 2 ? 'fade-stagger-3' : 'fade-stagger-4'}
+          className={staggerMap[i]}
         >
           <figure className={styles.figure}>
             <div className={styles.frame}>
-              <ScreenshotFrame src={shot.src} alt={shot.alt} label={shot.label} />
+              <ScreenshotFrame src={shot.src} alt={shot.alt} label={shot.label} preparing={ui.screenshotPreparing} />
             </div>
             <figcaption className={styles.caption}>{shot.label}</figcaption>
           </figure>
