@@ -1,10 +1,12 @@
-import { techLayers } from '../../data/content'
+import { useContent } from '../../i18n/LocaleContext'
 import FadeInOnScroll from '../ui/FadeInOnScroll'
 import styles from './TechStack.module.css'
 
 const staggerClasses = ['fade-stagger-1', 'fade-stagger-2', 'fade-stagger-3']
 
 export default function TechStack() {
+  const { techLayers } = useContent()
+
   return (
     <div className={styles.stack}>
       {techLayers.map((layer, i) => (

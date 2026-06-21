@@ -1,19 +1,22 @@
+import { useContent } from '../../i18n/LocaleContext'
 import styles from './Footer.module.css'
 
 export default function Footer() {
+  const { footer } = useContent()
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <nav className={styles.links}>
-          <a href="/help/index.html">使用帮助</a>
-          <a href="/privacy/index.html">隐私政策</a>
-          <a href="/agreement/index.html">用户协议</a>
+          {footer.links.map((link) => (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ))}
         </nav>
         <p className={styles.copy}>
-          &copy; {new Date().getFullYear()} Yi Rui (易睿). All rights reserved.
+          &copy; {new Date().getFullYear()} {footer.copyright}. All rights reserved.
         </p>
         <p className={styles.contact}>
-          <a href="mailto:support@startyi.com">support@startyi.com</a>
+          <a href={`mailto:${footer.email}`}>{footer.email}</a>
         </p>
       </div>
     </footer>

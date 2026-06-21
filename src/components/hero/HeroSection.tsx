@@ -1,4 +1,4 @@
-import { site } from '../../data/content'
+import { useContent } from '../../i18n/LocaleContext'
 import styles from './HeroSection.module.css'
 
 function scrollToDownload(e: React.MouseEvent<HTMLAnchorElement>) {
@@ -7,13 +7,15 @@ function scrollToDownload(e: React.MouseEvent<HTMLAnchorElement>) {
 }
 
 export default function HeroSection() {
+  const { site } = useContent()
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
         <img
           className={styles.icon}
           src="/images/app-icon.png"
-          alt="CalculatorX 应用图标"
+          alt={`${site.name} app icon`}
           width="96"
           height="96"
         />

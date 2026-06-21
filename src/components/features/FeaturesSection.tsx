@@ -1,4 +1,4 @@
-import { features } from '../../data/content'
+import { useContent } from '../../i18n/LocaleContext'
 import FeatureCard from './FeatureCard'
 import FadeInOnScroll from '../ui/FadeInOnScroll'
 import styles from './FeaturesSection.module.css'
@@ -13,6 +13,8 @@ const staggerClasses = [
 ]
 
 export default function FeaturesSection() {
+  const { features } = useContent()
+
   return (
     <div className={styles.grid}>
       {features.map((feature, i) => (
