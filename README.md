@@ -1,4 +1,4 @@
-# CalculatorX · 官方网站
+# [CalculatorX](https://github.com/StarHeartY/CalculatorX) · 官方网站
 
 🌐 链接：[CalcX.startyi.com](https://calcx.startyi.com)
 
