@@ -1,6 +1,11 @@
 import { site } from '../../data/content'
 import styles from './HeroSection.module.css'
 
+function scrollToDownload(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault()
+  document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
@@ -15,7 +20,7 @@ export default function HeroSection() {
         <h1 className={styles.title}>{site.name}</h1>
         <p className={styles.tagline}>{site.tagline}</p>
         <p className={styles.description}>{site.description}</p>
-        <a href={site.heroCtaUrl} className={styles.cta}>
+        <a href={site.heroCtaUrl} className={styles.cta} onClick={scrollToDownload}>
           {site.heroCta}
         </a>
       </div>

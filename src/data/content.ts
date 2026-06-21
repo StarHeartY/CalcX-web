@@ -18,8 +18,8 @@ export const site = {
   tagline: '专业科学计算器',
   description:
     '基于 SymEngine 和 Giac 计算机代数系统的专业的科学计算器，支持符号计算、LaTeX 专业排版与超大数运算。',
-  heroCta: '访问 GitHub',
-  heroCtaUrl: 'https://github.com/StarHeartY/CalculatorX',
+  heroCta: '获 取',
+  heroCtaUrl: '#download',
 } as const
 
 export const features: Feature[] = [
