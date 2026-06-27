@@ -85,7 +85,7 @@ const zh: SiteContent = {
   footer: {
     copyright: 'Yi Rui (易睿)',
     links: [
-      { label: '使用帮助', href: '/help/index.html' },
+      { label: '使用帮助', href: '/docs' },
       { label: '隐私政策', href: '/privacy/index.html' },
       { label: '用户协议', href: '/agreement/index.html' },
     ],

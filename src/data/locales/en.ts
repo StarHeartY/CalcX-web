@@ -85,7 +85,7 @@ const en: SiteContent = {
   footer: {
     copyright: 'Yi Rui (易睿)',
     links: [
-      { label: 'Help', href: '/help/index.html' },
+      { label: 'Help', href: '/docs' },
       { label: 'Privacy', href: '/privacy/index.html' },
       { label: 'Agreement', href: '/agreement/index.html' },
     ],
