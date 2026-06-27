@@ -1,6 +1,6 @@
-# CalculatorX · 官方网站
+# [CalculatorX](https://github.com/StarHeartY/CalculatorX) · 官方网站
 
-链接：[CalcX.startyi.com](https://calcx.startyi.com)
+🌐 链接：<https://CalcX.startyi.com>
 
 CalculatorX 产品落地页，基于 **[React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vitejs.dev/)** 构建，部署于 **[GitHub Pages](https://pages.github.com/)**。
 
