@@ -19,7 +19,9 @@ export default function HeroSection() {
           width="96"
           height="96"
         />
-        <h1 className={styles.title}>{site.name}</h1>
+        <h1 className={styles.title}>
+          Calculator<span style={{ color: 'rgb(10, 89, 247)' }}>X</span>
+        </h1>
         <p className={styles.tagline}>{site.tagline}</p>
         <p className={styles.description}>{site.description}</p>
         <a href={site.heroCtaUrl} className={styles.cta} onClick={scrollToDownload}>

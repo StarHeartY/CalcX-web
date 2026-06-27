@@ -21,7 +21,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <a href="/" className={styles.logo}>
-          CalculatorX
+          Calculator<span style={{ color: 'rgb(10, 89, 247)' }}>X</span>
         </a>
         <div className={styles.actions}>
           <button
