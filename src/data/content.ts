@@ -44,7 +44,7 @@ export const footer = {
   links: [
     { label: '使用帮助', href: '/docs/' },
     { label: '隐私政策', href: '/privacy/' },
-    { label: '用户协议', href: '/agreement/index.html' },
+    { label: '用户协议', href: '/agreement/' },
   ],
   email: 'support@startyi.com',
 } as const

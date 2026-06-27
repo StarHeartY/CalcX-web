@@ -86,8 +86,8 @@ const en: SiteContent = {
     copyright: 'Yi Rui (易睿)',
     links: [
       { label: 'Help', href: '/docs' },
-      { label: 'Privacy', href: '/privacy/index.html' },
-      { label: 'Agreement', href: '/agreement/index.html' },
+      { label: 'Privacy', href: '/privacy/' },
+      { label: 'Agreement', href: '/agreement/' },
     ],
     email: 'support@startyi.com',
   },
