@@ -3,6 +3,9 @@ import styles from './Footer.module.css'
 
 export default function Footer() {
   const { footer } = useContent()
+  const startYear = 2026
+  const thisYear = new Date().getFullYear()
+  const year = thisYear === startYear ? `${startYear}` : `${startYear}–${thisYear}`
 
   return (
     <footer className={styles.footer}>
@@ -13,7 +16,7 @@ export default function Footer() {
           ))}
         </nav>
         <p className={styles.copy}>
-          &copy; {new Date().getFullYear()} {footer.copyright}. All rights reserved.
+          &copy; {year} {footer.copyright}. All rights reserved.
         </p>
         <p className={styles.contact}>
           <a href={`mailto:${footer.email}`}>{footer.email}</a>
