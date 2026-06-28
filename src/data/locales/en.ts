@@ -10,6 +10,11 @@ const en: SiteContent = {
     heroCtaUrl: '#download',
   },
 
+  nav: [
+    { label: 'Help', href: '/docs' },
+    { label: 'About', href: '/docs/about' },
+  ],
+
   features: [
     {
       icon: '∫',

@@ -58,6 +58,11 @@ export interface ScreenshotItem {
   label: string
 }
 
+export interface NavLink {
+  label: string
+  href: string
+}
+
 export interface UIText {
   themeToggleDark: string
   themeToggleLight: string
@@ -68,6 +73,7 @@ export interface UIText {
 
 export interface SiteContent {
   site: SiteMeta
+  nav: NavLink[]
   features: Feature[]
   techLayers: TechLayer[]
   download: Download

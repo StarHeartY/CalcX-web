@@ -10,6 +10,11 @@ const zh: SiteContent = {
     heroCtaUrl: '#download',
   },
 
+  nav: [
+    { label: '使用帮助', href: '/docs' },
+    { label: '关于', href: '/docs/about' },
+  ],
+
   features: [
     {
       icon: '∫',
