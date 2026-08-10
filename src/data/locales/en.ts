@@ -83,7 +83,7 @@ const en: SiteContent = {
     steps: [],
     note: 'Install packages are also available through open-source distribution channels. CalculatorX is open-sourced under the GPL 3.0 license — source code is fully public. Audits and contributions are welcome.',
     buttonLabel: 'AppGallery',
-    buttonUrl: 'https://appgallery.huawei.com/',
+    buttonUrl: 'https://appgallery.huawei.com/app/detail?id=com.startyi.calcx',
     githubButton: 'View on GitHub',
   },
 

@@ -83,7 +83,7 @@ const zh: SiteContent = {
     steps: [],
     note: '也可通过开源分发渠道获取安装包。CalculatorX 基于 GPL 3.0 协议开源，源代码完全公开，欢迎审计与贡献。',
     buttonLabel: 'AppGallery',
-    buttonUrl: 'https://appgallery.huawei.com/',
+    buttonUrl: 'https://appgallery.huawei.com/app/detail?id=com.startyi.calcx',
     githubButton: '访问 GitHub',
   },
 
