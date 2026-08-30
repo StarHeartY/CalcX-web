@@ -1,126 +1,144 @@
 import type { SiteContent } from '../content.types'
 
 const en: SiteContent = {
-  site: {
-    name: 'CalculatorX',
-    tagline: 'Professional Scientific Calculator',
-    description:
-      'A professional scientific calculator powered by SymEngine and Giac computer algebra systems, supporting symbolic computation, LaTeX typesetting, and massive-number arithmetic.',
-    heroCta: 'Get',
-    heroCtaUrl: '#download',
+  meta: {
+    title: 'CalculatorX — A native math workspace for HarmonyOS NEXT',
+    description: 'From exact computation, calculus, and equations to matrices, graphing, and live currency conversion — in one native HarmonyOS NEXT math workspace.',
   },
-
-  nav: [
-    { label: 'Help', href: '/docs' },
-    { label: 'About', href: '/docs/about' },
-  ],
-
-  features: [
-    {
-      icon: '∫',
-      title: 'Symbolic Algebra',
-      description:
-        'Powered by the industrial-grade SymEngine CAS engine. Supports polynomial expansion, radical simplification, trigonometric identities, and other exact symbolic operations — delivering perfectly precise fractional and radical results, not approximate floating-point values.',
-    },
-    {
-      icon: '𝑥',
-      title: 'LaTeX Typesetting',
-      description:
-        'Uses the MathLive rendering engine to typeset all formulas in textbook-quality LaTeX. Supports binomial coefficients, integrals, summations, and complex two-dimensional notation for a publication-grade visual experience.',
-    },
-    {
-      icon: '∞',
-      title: 'Massive Numbers',
-      description:
-        'A standalone FastMath module uses logarithmic reduction and Stirling approximations to compute astronomically large numbers in O(1) time — far beyond the limits of ordinary calculators, supporting values up to 10⁹⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰.',
-    },
-    {
-      icon: '☀',
-      title: 'Light & Dark Mode',
-      description:
-        'Adapts to the system light/dark appearance and switches seamlessly. Carefully tuned color schemes keep formulas crisp and legible in both modes, with a comfortable eye-friendly experience for nighttime use.',
-    },
-    {
-      icon: '⚡',
-      title: 'Haptic Feedback',
-      description:
-        'Custom vibration patterns recreate the feel of physical keys. Built on HarmonyOS system-level haptic effects, every tap delivers clear, satisfying feedback.',
-    },
-    {
-      icon: '◎',
-      title: 'Precision Control',
-      description:
-        'Choose fixed-point decimal precision from 0 to 15 digits. Auto mode preserves exact symbolic output (fractions, radicals, etc.), satisfying everything from everyday arithmetic to academic research.',
-    },
-  ],
-
-  techLayers: [
-    {
-      name: 'UI Control Layer',
-      subtitle: 'ArkTS / ArkUI',
-      description:
-        'Declarative UI builds the native keypad and feature panels. Implements ⇧Shift state-machine interception, dynamic font routing, degree/radian toggling, and integrates with system-level animations and haptic feedback.',
-      tags: ['ArkTS', 'ArkUI', 'HarmonyOS'],
-    },
-    {
-      name: 'Rendering Engine Layer',
-      subtitle: 'WebView + MathLive',
-      description:
-        'A Web component hosts a local sandboxed HTML page bundled with the fully offline MathLive typesetting engine. Cross-environment DOM manipulation via runJavaScript renders LaTeX formulas with textbook fidelity.',
-      tags: ['WebView', 'MathLive', 'LaTeX', 'MathJSON'],
-    },
-    {
-      name: 'Computation Engine Layer',
-      subtitle: 'C++ / SymEngine / Giac',
-      description:
-        'A CMake-built native C++ algebra engine statically linked against SymEngine, Giac, and Boost. A hand-written parseAST converts MathJSON into SymEngine expression trees for exact symbolic computation and massive-number arithmetic.',
-      tags: ['C++', 'SymEngine', 'Giac', 'Boost', 'N-API'],
-    },
-  ],
-
-  download: {
-    title: 'Get CalculatorX',
-    steps: [],
-    note: 'Install packages are also available through open-source distribution channels. CalculatorX is open-sourced under the GPL 3.0 license — source code is fully public. Audits and contributions are welcome.',
-    buttonLabel: 'AppGallery',
-    buttonUrl: 'https://appgallery.huawei.com/app/detail?id=com.startyi.calcx',
-    githubButton: 'View on GitHub',
-  },
-
-  footer: {
-    copyright: 'Yi Rui (易睿)',
+  nav: {
     links: [
-      { label: 'Help', href: '/docs' },
+      { label: 'Capabilities', href: '#capabilities' },
+      { label: 'Experience', href: '#showcase' },
+      { label: 'Technology', href: '#technology' },
+      { label: 'Docs', href: '/docs', external: true },
+    ],
+    download: 'Get',
+    menuOpen: 'Open navigation menu',
+    menuClose: 'Close navigation menu',
+  },
+  hero: {
+    eyebrow: 'Built for HarmonyOS NEXT',
+    titleBefore: 'More than answers. ',
+    titleAccent: 'A better way to understand math.',
+    titleAfter: '',
+    description: 'Exact symbolic computation, equations, matrices, graphing, and currency conversion — CalculatorX brings everyday arithmetic and advanced math into one fluid, native workspace.',
+    primaryAction: 'Get it on AppGallery',
+    secondaryAction: 'View the source',
+    visualAlt: 'CalculatorX simplifying a radical to an exact symbolic result',
+    visualBadge: 'Exact results, not just decimals',
+    floatingFormula: 'f(x) = sin(x) / x',
+  },
+  proof: [
+    { value: '1.6.2', label: 'Current release' },
+    { value: '5', label: 'Graph types' },
+    { value: '6×6', label: 'Matrix support' },
+    { value: '172', label: 'Currencies & assets' },
+  ],
+  capabilities: {
+    eyebrow: 'One math workspace',
+    title: 'From everyday arithmetic to advanced mathematics',
+    description: 'Every module is designed around a touch screen instead of shrinking a desktop calculator into a phone.',
+    items: [
+      { icon: '∫', title: 'Scientific math & calculus', description: 'Trigonometry, logs, derivatives, integrals, limits, sums, and products with exact symbolic output.', accent: 'blue' },
+      { icon: 'x₁', title: 'Equations & systems', description: 'Solve single equations and systems with up to six unknowns through clear cases-based input.', accent: 'orange' },
+      { icon: '▦', title: 'Matrices & linear algebra', description: 'Work with 1×1 to 6×6 matrices, inverses, determinants, rank, rref, trace, and eigenvalues.', accent: 'violet' },
+      { icon: 'ƒ', title: 'Five kinds of graphs', description: 'Plot explicit, parametric, polar, implicit functions, and points — up to ten at once.', accent: 'green' },
+      { icon: '¥', title: 'Live exchange rates', description: 'Convert 172 currencies and assets with search, sorting, caching, and offline viewing.', accent: 'orange' },
+      { icon: '↺', title: 'Unified history', description: 'Keep expressions and results by module, search them, and insert them back into your work.', accent: 'blue' },
+    ],
+  },
+  showcase: {
+    eyebrow: 'Power you can see and feel',
+    title: 'Advanced math without a complicated workflow',
+    description: 'Enter, solve, change result formats, and turn abstract expressions into explorable graphs inside one coherent interface.',
+    imageMissing: 'New screenshot coming soon',
+    items: [
+      {
+        id: 'exact', tab: 'Exact results', eyebrow: 'Exact or approximate — you choose', title: 'An answer can be more than a decimal',
+        description: 'CalculatorX preserves fractions, radicals, π, and symbolic expressions whenever possible. S⇄D gives you an approximation when you want one.',
+        points: ['Symbolic results and high-precision decimals', 'Fractions, mixed numbers, and DMS', 'Textbook-quality LaTeX typesetting'],
+        lightSrc: '/images/product/exact.png', darkSrc: '/images/product/exact-dark.png',
+        alt: 'CalculatorX displaying one third as an exact fraction', fallbackFormula: '√8 = 2√2', fallbackLabel: 'Exact calculation screen',
+      },
+      {
+        id: 'graphing', tab: 'Graphing', eyebrow: 'From expression to graph', title: 'See how a function behaves',
+        description: 'Plot up to ten functions, pan and pinch through the coordinate space, and keep independent colors and domains for every expression.',
+        points: ['Five function types', 'Adaptive sampling and discontinuity handling', 'Pan, zoom, and multi-function overlays'],
+        lightSrc: '/images/product/graphing.webp', darkSrc: '/images/product/graphing-dark.webp',
+        alt: 'CalculatorX graphing several colorful functions', fallbackFormula: 'y = sin(x)', fallbackLabel: 'Graphing screen',
+      },
+      {
+        id: 'matrix', tab: 'Equations & matrices', eyebrow: 'Structured input, direct answers', title: 'Linear algebra in your pocket',
+        description: 'Native keypads and two-dimensional templates keep equation systems and matrix expressions readable from input to result.',
+        points: ['Systems with up to six unknowns', 'Matrices from 1×1 to 6×6', 'rank, rref, trace, and eigenvalues'],
+        lightSrc: '/images/product/matrix-equation.webp', darkSrc: '/images/product/matrix-equation-dark.webp',
+        alt: 'CalculatorX matrix and equation solving screens', fallbackFormula: '[A]⁻¹ · b', fallbackLabel: 'Matrix and equation screens',
+      },
+      {
+        id: 'exchange', tab: 'Rates & history', eyebrow: 'A math workspace for daily life too', title: 'Calculate, convert, and keep the result',
+        description: 'Convert a whole list of currencies at once with local caching, while every math module keeps structured expressions and results.',
+        points: ['172 currencies and assets', 'Hourly refresh and offline cache', 'Cross-module history, search, and reuse'],
+        lightSrc: '/images/product/exchange-history.webp', darkSrc: '/images/product/exchange-history-dark.webp',
+        alt: 'CalculatorX exchange rate and history screens', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: 'Exchange and history screens',
+      },
+    ],
+  },
+  experience: {
+    eyebrow: 'Redesigned for touch',
+    title: 'As clear as paper. As fluid as a native app.',
+    description: 'Live formula layout, Shift functions, slide bubbles, repeat keys, and haptics create a math input system that belongs on a phone.',
+    items: [
+      { number: '01', title: 'WYSIWYG formulas', description: 'Fractions, radicals, integrals, limits, and matrices stay two-dimensional while you type.' },
+      { number: '02', title: 'Less clutter, more control', description: 'Shift, hold, and slide gestures keep the keypad clean without hiding efficient input.' },
+      { number: '03', title: 'Local-first, with clear boundaries', description: 'Core math and history stay primarily on-device; exchange rates use the network and remain available from cache.' },
+    ],
+    formulaInput: 'limₓ→0  sin(x) / x',
+    formulaOutput: '1',
+    formulaLabel: 'Symbolic computation · Exact result',
+  },
+  architecture: {
+    eyebrow: 'Technology in service of the experience',
+    title: 'Native interaction, professional typesetting, and two CAS engines',
+    description: 'ArkUI handles fluid interactions, MathLive turns formulas into structured MathJSON, and the C++ layer routes work to SymEngine, Giac, and specialized engines.',
+    steps: [
+      { name: 'ArkUI', detail: 'Native UI and haptics' },
+      { name: 'MathLive', detail: 'Formula editing and MathJSON' },
+      { name: 'N-API', detail: 'Cross-language data channel' },
+      { name: 'C++ Engines', detail: 'CAS, matrices, and graphing' },
+      { name: 'LaTeX / Canvas', detail: 'Exact results and visuals' },
+    ],
+    notes: ['SymEngine + Giac dual CAS', 'RPN and adaptive graph sampling', 'Local RDB history'],
+  },
+  openSource: {
+    eyebrow: 'Open source, not a black box',
+    title: 'Verify the math — and the code behind it',
+    description: 'CalculatorX is GPLv3 open source. Audit the calculation pipeline, report an issue, contribute an improvement, or download development builds from Releases.',
+    primaryAction: 'View on GitHub',
+    secondaryAction: 'Read the architecture',
+    badges: ['GPLv3', 'ArkTS', 'C++', 'SymEngine', 'Giac'],
+  },
+  download: {
+    eyebrow: 'Get started',
+    title: 'Bring your next problem to CalculatorX',
+    description: 'AppGallery is recommended for installation and updates. Development and historical builds are available from GitHub Releases.',
+    appGallery: 'Get on AppGallery',
+    github: 'GitHub Releases',
+    footnote: 'Built for HarmonyOS NEXT · Free core features · No feature paywall',
+  },
+  footer: {
+    statement: 'A native math workspace for HarmonyOS NEXT.',
+    links: [
+      { label: 'Documentation', href: '/docs', external: true },
       { label: 'Privacy', href: '/privacy/' },
       { label: 'Agreement', href: '/agreement/' },
+      { label: 'Report an issue', href: 'https://github.com/StarHeartY/CalculatorX/issues/new', external: true },
     ],
-    email: 'support@startyi.com',
+    copyright: 'Yi Rui',
   },
-
-  sections: {
-    featuresTitle: 'Features',
-    featuresSubtitle: 'Symbolic computation, professional typesetting, and massive-number arithmetic — redefining the mobile scientific calculator experience.',
-    galleryTitle: 'Interface',
-    gallerySubtitle: 'Carefully adapted for light and dark modes, with professional typesetting at a glance.',
-    architectureTitle: 'Architecture',
-    architectureSubtitle: 'Innovative three-layer architecture: ArkTS Native UI · WebView Rendering · C++ Computation Engine',
-    downloadTitle: 'Get CalculatorX',
-    downloadSubtitle: 'Open source and free. No feature paywalls. Start your professional calculation journey now.',
-  },
-
-  screenshots: [
-    { src: '/images/screenshot-basic-math.webp', alt: 'CalculatorX basic math computation', label: 'Basic Math' },
-    { src: '/images/screenshot-advanced-math.webp', alt: 'CalculatorX advanced math computation', label: 'Advanced Math' },
-    { src: '/images/screenshot-big-digit.webp', alt: 'CalculatorX massive-number computation', label: 'Large Numbers' },
-    { src: '/images/screenshot-settings.webp', alt: 'CalculatorX settings interface', label: 'Settings' },
-  ],
-
   ui: {
-    themeToggleDark: 'Dark Mode',
-    themeToggleLight: 'Light Mode',
+    switchLanguage: '切换到中文',
     switchToDark: 'Switch to dark mode',
     switchToLight: 'Switch to light mode',
-    screenshotPreparing: 'Preparing screenshot…',
   },
 }
 

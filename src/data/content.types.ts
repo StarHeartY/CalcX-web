@@ -1,84 +1,106 @@
-// Shared content interface — every locale must satisfy this shape
+export type ShowcaseId = 'exact' | 'graphing' | 'matrix' | 'exchange'
 
-export interface SiteMeta {
-  name: string
-  tagline: string
-  description: string
-  heroCta: string
-  heroCtaUrl: string
+export interface LinkItem {
+  label: string
+  href: string
+  external?: boolean
 }
 
-export interface Feature {
+export interface Capability {
   icon: string
   title: string
   description: string
+  accent: 'blue' | 'orange' | 'violet' | 'green'
 }
 
-export interface TechLayer {
-  name: string
-  subtitle: string
-  description: string
-  tags: string[]
-}
-
-export interface FooterLink {
-  label: string
-  href: string
-}
-
-export interface Download {
+export interface ShowcaseItem {
+  id: ShowcaseId
+  tab: string
+  eyebrow: string
   title: string
-  steps: string[]
-  note: string
-  buttonLabel: string
-  buttonUrl: string
-  githubButton: string
-}
-
-export interface Footer {
-  copyright: string
-  links: FooterLink[]
-  email: string
-}
-
-export interface Sections {
-  featuresTitle: string
-  featuresSubtitle: string
-  galleryTitle: string
-  gallerySubtitle: string
-  architectureTitle: string
-  architectureSubtitle: string
-  downloadTitle: string
-  downloadSubtitle: string
-}
-
-export interface ScreenshotItem {
-  src: string
+  description: string
+  points: string[]
+  lightSrc: string
+  darkSrc: string
   alt: string
-  label: string
-}
-
-export interface NavLink {
-  label: string
-  href: string
-}
-
-export interface UIText {
-  themeToggleDark: string
-  themeToggleLight: string
-  switchToDark: string
-  switchToLight: string
-  screenshotPreparing: string
+  fallbackFormula: string
+  fallbackLabel: string
 }
 
 export interface SiteContent {
-  site: SiteMeta
-  nav: NavLink[]
-  features: Feature[]
-  techLayers: TechLayer[]
-  download: Download
-  footer: Footer
-  sections: Sections
-  screenshots: ScreenshotItem[]
-  ui: UIText
+  meta: { title: string; description: string }
+  nav: {
+    links: LinkItem[]
+    download: string
+    menuOpen: string
+    menuClose: string
+  }
+  hero: {
+    eyebrow: string
+    titleBefore: string
+    titleAccent: string
+    titleAfter: string
+    description: string
+    primaryAction: string
+    secondaryAction: string
+    visualAlt: string
+    visualBadge: string
+    floatingFormula: string
+  }
+  proof: Array<{ value: string; label: string }>
+  capabilities: {
+    eyebrow: string
+    title: string
+    description: string
+    items: Capability[]
+  }
+  showcase: {
+    eyebrow: string
+    title: string
+    description: string
+    items: ShowcaseItem[]
+    imageMissing: string
+  }
+  experience: {
+    eyebrow: string
+    title: string
+    description: string
+    items: Array<{ number: string; title: string; description: string }>
+    formulaInput: string
+    formulaOutput: string
+    formulaLabel: string
+  }
+  architecture: {
+    eyebrow: string
+    title: string
+    description: string
+    steps: Array<{ name: string; detail: string }>
+    notes: string[]
+  }
+  openSource: {
+    eyebrow: string
+    title: string
+    description: string
+    primaryAction: string
+    secondaryAction: string
+    badges: string[]
+  }
+  download: {
+    eyebrow: string
+    title: string
+    description: string
+    appGallery: string
+    github: string
+    footnote: string
+  }
+  footer: {
+    statement: string
+    links: LinkItem[]
+    copyright: string
+  }
+  ui: {
+    switchLanguage: string
+    switchToDark: string
+    switchToLight: string
+  }
 }

@@ -4,73 +4,91 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import puppeteer from 'puppeteer'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const distDir = path.resolve(__dirname, '..', 'dist')
+const scriptDir = path.dirname(fileURLToPath(import.meta.url))
+const distDir = path.resolve(scriptDir, '..', 'dist')
 const port = 4173
 
-// Start a static file server
-function serve() {
-  return http.createServer((req, res) => {
-    let filePath = path.join(distDir, req.url === '/' ? '/index.html' : req.url)
-    const ext = path.extname(filePath)
+function findInstalledBrowser() {
+  const candidates = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+    'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+  ]
+  return candidates.find((candidate) => candidate && fs.existsSync(candidate))
+}
 
-    const mime = {
-      '.html': 'text/html',
-      '.js': 'application/javascript',
-      '.css': 'text/css',
-      '.png': 'image/png',
-      '.webp': 'image/webp',
-      '.svg': 'image/svg+xml',
-      '.ico': 'image/x-icon',
+const contentTypes = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.txt': 'text/plain; charset=utf-8',
+}
+
+function resolveRequestPath(requestUrl) {
+  const pathname = decodeURIComponent(new URL(requestUrl, `http://localhost:${port}`).pathname)
+  const relativePath = pathname.endsWith('/') ? `${pathname}index.html` : pathname
+  const resolved = path.resolve(distDir, `.${relativePath}`)
+  return resolved.startsWith(distDir) ? resolved : null
+}
+
+function serve() {
+  return http.createServer((request, response) => {
+    const filePath = resolveRequestPath(request.url ?? '/')
+    if (!filePath) {
+      response.writeHead(403)
+      response.end('Forbidden')
+      return
     }
 
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        res.writeHead(404)
-        res.end('Not found')
-      } else {
-        res.writeHead(200, { 'Content-Type': mime[ext] || 'text/plain' })
-        res.end(data)
+    fs.readFile(filePath, (error, data) => {
+      if (error) {
+        response.writeHead(404)
+        response.end('Not found')
+        return
       }
+      response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath)] ?? 'application/octet-stream' })
+      response.end(data)
     })
   })
 }
 
 async function prerender() {
-  console.log('Starting prerender...')
-
   const server = serve()
-  await new Promise(resolve => server.listen(port, resolve))
-  console.log(`Static server running on http://localhost:${port}`)
-
+  await new Promise((resolve) => server.listen(port, resolve))
+  const executablePath = findInstalledBrowser()
   const browser = await puppeteer.launch({
     headless: true,
+    executablePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   })
-  const page = await browser.newPage()
 
   try {
-    await page.goto(`http://localhost:${port}`, { waitUntil: 'networkidle0' })
-    // Extra wait to ensure scroll-reveal animations have completed
-    await page.evaluate(() => {
-      // Trigger all scroll-reveal elements to be visible
-      document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
-        el.classList.add('visible')
-      })
-    })
-    await new Promise(r => setTimeout(r, 500))
+    const page = await browser.newPage()
+    await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 })
 
-    const html = await page.content()
-    const indexPath = path.join(distDir, 'index.html')
-    fs.writeFileSync(indexPath, html, 'utf-8')
-    console.log(`Prerendered HTML written to ${indexPath} (${(html.length / 1024).toFixed(1)} KB)`)
+    for (const target of [
+      { route: '/', output: 'index.html' },
+      { route: '/en/', output: path.join('en', 'index.html') },
+    ]) {
+      await page.goto(`http://localhost:${port}${target.route}`, { waitUntil: 'networkidle0' })
+      const html = await page.content()
+      fs.writeFileSync(path.join(distDir, target.output), html, 'utf8')
+      console.log(`Prerendered ${target.route} -> ${target.output}`)
+    }
   } finally {
     await browser.close()
     server.close()
   }
 }
 
-prerender().catch(err => {
-  console.error('Prerender failed:', err)
+prerender().catch((error) => {
+  console.error('Prerender failed:', error)
   process.exit(1)
 })

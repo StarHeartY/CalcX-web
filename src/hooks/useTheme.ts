@@ -1,50 +1,38 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 type Theme = 'light' | 'dark'
-
 const STORAGE_KEY = 'calcx-theme'
 
-function getSystemTheme(): Theme {
+function systemTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
-function getInitialTheme(): Theme {
+function initialTheme(): Theme {
   const stored = localStorage.getItem(STORAGE_KEY)
-  if (stored === 'light' || stored === 'dark') return stored
-  return getSystemTheme()
-}
-
-function applyTheme(theme: Theme): void {
-  document.documentElement.dataset.theme = theme
+  return stored === 'light' || stored === 'dark' ? stored : systemTheme()
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme)
-  const [isManual, setIsManual] = useState<boolean>(
-    () => localStorage.getItem(STORAGE_KEY) !== null
-  )
+  const [theme, setTheme] = useState<Theme>(initialTheme)
 
   useEffect(() => {
-    applyTheme(theme)
-    localStorage.setItem(STORAGE_KEY, theme)
+    document.documentElement.dataset.theme = theme
   }, [theme])
 
-  // Listen for system theme changes (only when user hasn't manually overridden)
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const handler = (e: MediaQueryListEvent) => {
-      if (!isManual) {
-        const newTheme = e.matches ? 'dark' : 'light'
-        setTheme(newTheme)
-      }
-    }
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [isManual])
+    if (localStorage.getItem(STORAGE_KEY)) return
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    const syncWithSystem = (event: MediaQueryListEvent) => setTheme(event.matches ? 'dark' : 'light')
+    media.addEventListener('change', syncWithSystem)
+    return () => media.removeEventListener('change', syncWithSystem)
+  }, [])
 
   const toggle = useCallback(() => {
-    setIsManual(true)
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
+    setTheme((current) => {
+      const next = current === 'light' ? 'dark' : 'light'
+      localStorage.setItem(STORAGE_KEY, next)
+      return next
+    })
   }, [])
 
   return { theme, toggle }

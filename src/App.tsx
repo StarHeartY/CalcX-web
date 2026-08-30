@@ -1,54 +1,28 @@
-import { useContent } from './i18n/LocaleContext'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-import HeroSection from './components/hero/HeroSection'
-import FeaturesSection from './components/features/FeaturesSection'
-import ScreenshotGallery from './components/gallery/ScreenshotGallery'
-import TechStack from './components/architecture/TechStack'
-import DownloadGuide from './components/download/DownloadGuide'
-import Section from './components/ui/Section'
-import styles from './App.module.css'
+import HeroSection from './components/sections/HeroSection'
+import CapabilitiesSection from './components/sections/CapabilitiesSection'
+import ShowcaseSection from './components/sections/ShowcaseSection'
+import ExperienceSection from './components/sections/ExperienceSection'
+import TechnologySection from './components/sections/TechnologySection'
+import OpenSourceSection from './components/sections/OpenSourceSection'
+import DownloadSection from './components/sections/DownloadSection'
 
 export default function App() {
-  const content = useContent()
-  const { sections } = content
-
   return (
-    <div className={styles.app}>
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <main className={styles.main}>
+      <main id="main">
         <HeroSection />
-        <Section
-          id="features"
-          title={sections.featuresTitle}
-          subtitle={sections.featuresSubtitle}
-        >
-          <FeaturesSection />
-        </Section>
-        <Section
-          id="gallery"
-          title={sections.galleryTitle}
-          subtitle={sections.gallerySubtitle}
-          fullWidth
-        >
-          <ScreenshotGallery />
-        </Section>
-        <Section
-          id="architecture"
-          title={sections.architectureTitle}
-          subtitle={sections.architectureSubtitle}
-        >
-          <TechStack />
-        </Section>
-        <Section
-          id="download"
-          title={sections.downloadTitle}
-          subtitle={sections.downloadSubtitle}
-        >
-          <DownloadGuide />
-        </Section>
+        <CapabilitiesSection />
+        <ShowcaseSection />
+        <ExperienceSection />
+        <TechnologySection />
+        <OpenSourceSection />
+        <DownloadSection />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

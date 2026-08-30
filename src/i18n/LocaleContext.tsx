@@ -1,59 +1,58 @@
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, type ReactNode } from 'react'
 import type { SiteContent } from '../data/content.types'
 import zh from '../data/locales/zh'
 import en from '../data/locales/en'
 
 export type Locale = 'zh' | 'en'
 
-const LOCALE_STORAGE_KEY = 'calcx-locale'
 const LOCALES: Record<Locale, SiteContent> = { zh, en }
 
-function detectLocale(): Locale {
-  const stored = localStorage.getItem(LOCALE_STORAGE_KEY)
-  if (stored === 'zh' || stored === 'en') return stored
-
-  const nav = navigator.language.toLowerCase()
-  if (nav.startsWith('zh')) return 'zh'
-
-  return 'zh'
+function localeFromPath(): Locale {
+  return window.location.pathname === '/en' || window.location.pathname.startsWith('/en/')
+    ? 'en'
+    : 'zh'
 }
 
-function LocaleContextValue(locale: Locale, setLocale: (l: Locale) => void) {
-  return { locale, setLocale, content: LOCALES[locale] }
+interface LocaleContextValue {
+  locale: Locale
+  content: SiteContent
+  switchLocale: () => void
 }
 
-const LocaleContext = createContext<ReturnType<typeof LocaleContextValue> | null>(null)
+const LocaleContext = createContext<LocaleContextValue | null>(null)
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(detectLocale)
-
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next)
-    localStorage.setItem(LOCALE_STORAGE_KEY, next)
-    document.documentElement.lang = next === 'zh' ? 'zh-CN' : 'en'
-  }, [])
+  const locale = localeFromPath()
+  const content = LOCALES[locale]
 
   useEffect(() => {
     document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en'
-  }, [locale])
+    document.title = content.meta.title
+    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+    if (description) description.content = content.meta.description
+  }, [content, locale])
+
+  const switchLocale = () => {
+    window.location.assign(locale === 'zh' ? '/en/' : '/')
+  }
 
   return (
-    <LocaleContext.Provider value={LocaleContextValue(locale, setLocale)}>
+    <LocaleContext.Provider value={{ locale, content, switchLocale }}>
       {children}
     </LocaleContext.Provider>
   )
 }
 
 export function useContent(): SiteContent {
-  const ctx = useContext(LocaleContext)
-  if (!ctx) throw new Error('useContent must be used within LocaleProvider')
-  return ctx.content
+  const context = useContext(LocaleContext)
+  if (!context) throw new Error('useContent must be used within LocaleProvider')
+  return context.content
 }
 
 export function useLocale() {
-  const ctx = useContext(LocaleContext)
-  if (!ctx) throw new Error('useLocale must be used within LocaleProvider')
-  return { locale: ctx.locale, setLocale: ctx.setLocale }
+  const context = useContext(LocaleContext)
+  if (!context) throw new Error('useLocale must be used within LocaleProvider')
+  return { locale: context.locale, switchLocale: context.switchLocale }
 }
 
 export function getContent(locale: Locale): SiteContent {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://calcx.startyi.com/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://calcx.startyi.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcx.startyi.com/en/" />
+  </url>
+  <url>
+    <loc>https://calcx.startyi.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://calcx.startyi.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcx.startyi.com/en/" />
+  </url>
+  <url><loc>https://calcx.startyi.com/privacy/</loc></url>
+  <url><loc>https://calcx.startyi.com/agreement/</loc></url>
+</urlset>

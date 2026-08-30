@@ -1,92 +1,54 @@
-/* /css/style.css */
 :root {
-    --bg-color: #ffffff;
-    --text-primary: #000000;
-    --text-secondary: #313131;
-    --text-tertiary: #646464;
-    --brand-color: #000000;
-    --divider-color: #ffffff;
+  color-scheme: light dark;
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --ink: #17181b;
+  --muted: #656a74;
+  --line: rgba(20, 22, 26, .12);
+  --blue: #0a59f7;
+  --orange: #ff5c35;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #000000;
-        --text-primary: #d6d6d6;
-        --text-secondary: #dbdbdb;
-        --text-tertiary: #bbbbbb;
-        --brand-color: #ffffff;
-        --divider-color: #000000;
-    }
+  :root {
+    --bg: #090a0c;
+    --surface: #15171c;
+    --ink: #f5f6f8;
+    --muted: #afb4bf;
+    --line: rgba(255, 255, 255, .11);
+  }
 }
 
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    padding: 0 0 20px 0;
-    margin: 0;
-    line-height: 1.6;
+  margin: 0;
+  padding: 64px 20px 90px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--blue) 12%, transparent), transparent 25rem),
+    var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.8;
 }
-
-.container {
-    padding: 0 24px;
+.container { width: min(100%, 820px); margin: 0 auto; }
+.container::before {
+  content: "CalculatorX";
+  display: block;
+  margin-bottom: 70px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 850;
+  letter-spacing: -.04em;
 }
-
-h1 {
-    font-size: 24px;
-    margin-top: 48px;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-    text-align: center;
-}
-
-.update-time {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-h2 {
-    font-size: 18px;
-    margin-top: 16px;
-    margin-bottom: 4px;
-    color: var(--brand-color);
-}
-
-h3 {
-    font-size: 16px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    color: var(--brand-color);
-}
-
-p{
-    font-size: 15px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-}
-
-ul {
-    font-size: 15px;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 12px;
-    margin-bottom: 16px;
-    color: var(--text-tertiary);
-    text-align: center;
-}
+h1 { margin: 0 0 18px; font-size: clamp(2.3rem, 7vw, 4.2rem); line-height: 1.06; letter-spacing: -.055em; }
+h2 { margin: 58px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 1.45rem; letter-spacing: -.025em; }
+h3 { margin: 34px 0 10px; font-size: 1.05rem; }
+p, li { color: var(--muted); }
+strong { color: var(--ink); }
+a { color: var(--blue); }
+ul { padding-left: 1.25rem; }
+li + li { margin-top: 8px; }
+.update-time { display: inline-flex; margin: 0 8px 8px 0; padding: 6px 11px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; font-size: .76rem; }
+footer { margin-top: 70px; padding-top: 24px; color: var(--muted); border-top: 1px solid var(--line); font-size: .78rem; }
+@media (max-width: 600px) { body { padding-top: 38px; } .container::before { margin-bottom: 46px; } h2 { margin-top: 44px; } }
