@@ -7,7 +7,6 @@ CalculatorX 官方产品网站，面向用户介绍这款为 HarmonyOS NEXT 打�
 - AppGallery：<https://appgallery.huawei.com/app/detail?id=com.startyi.calcx>
 - 使用文档：<https://calcx.startyi.com/docs>
 
-![CalculatorX 科学计算界面](./public/images/product/scientific.png)
 
 ## 项目定位
 
