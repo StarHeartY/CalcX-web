@@ -1,126 +1,144 @@
 import type { SiteContent } from '../content.types'
 
 const zh: SiteContent = {
-  site: {
-    name: 'CalculatorX',
-    tagline: '专业科学计算器',
-    description:
-      '基于 SymEngine 和 Giac 计算机代数系统的专业的科学计算器，支持符号计算、LaTeX 专业排版与超大数运算。',
-    heroCta: '获 取',
-    heroCtaUrl: '#download',
+  meta: {
+    title: 'CalculatorX — HarmonyOS NEXT 原生数学工作区',
+    description: '从精确计算、微积分和方程，到矩阵、函数图像与实时汇率。CalculatorX 是面向 HarmonyOS NEXT 的原生数学工作区。',
   },
-
-  nav: [
-    { label: '使用帮助', href: '/docs' },
-    { label: '关于', href: '/docs/about' },
-  ],
-
-  features: [
-    {
-      icon: '∫',
-      title: '符号代数计算',
-      description:
-        '底层集成工业级 SymEngine CAS 引擎，支持多项式展开、根号化简、三角函数恒等变换等精确符号运算，输出完美精度的分数与根号结果，而非近似的浮点数值。',
-    },
-    {
-      icon: '𝑥',
-      title: 'LaTeX 专业排版',
-      description:
-        '采用 MathLive 渲染引擎，所有公式以教科书级 LaTeX 标准实时排版。支持组合数、积分、求和等复杂二维数学符号的专业显示，带来出版级的视觉体验。',
-    },
-    {
-      icon: '∞',
-      title: '超大数计算',
-      description:
-        '独立 FastMath 模块，利用对数降维与斯特林近似，在 O(1) 时间计算远超普通计算器极限的宇宙级大数，最大支持 10⁹⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰ 级别的天文数字。',
-    },
-    {
-      icon: '☀',
-      title: '深浅色模式',
-      description:
-        '适配系统深色/浅色模式，自动跟随系统状态无缝切换。精心调校的配色方案确保两种模式下公式均清晰可辨，夜间使用也舒适护眼。',
-    },
-    {
-      icon: '⚡',
-      title: '触感反馈',
-      description:
-        '自定义振动风格，还原真实物理按键手感。搭载 HarmonyOS 系统级触控光效，每一次点击都能得到明确而舒适的反馈。',
-    },
-    {
-      icon: '◎',
-      title: '精度自由掌控',
-      description:
-        '支持 0~15 位定点小数精度自由调节；自动模式则保留完美精度的符号输出（分数、根号等），满足从日常到学术的多样化计算需求。',
-    },
-  ],
-
-  techLayers: [
-    {
-      name: 'UI 控制层',
-      subtitle: 'ArkTS / ArkUI',
-      description:
-        '声明式 UI 构建原生键盘与功能面板。实现 ⇧Shift 状态机拦截、动态字体路由、角度/弧度切换等完善交互逻辑，无缝接入系统级动效与触控反馈。',
-      tags: ['ArkTS', 'ArkUI', 'HarmonyOS'],
-    },
-    {
-      name: '渲染引擎层',
-      subtitle: 'WebView + MathLive',
-      description:
-        'Web 组件挂载本地沙箱 HTML，搭载全离线 MathLive 数学排版引擎。支持通过 runJavaScript 进行跨端 DOM 操作，将 LaTeX 公式渲染为教科书级排版。',
-      tags: ['WebView', 'MathLive', 'LaTeX', 'MathJSON'],
-    },
-    {
-      name: '计算引擎层',
-      subtitle: 'C++ / SymEngine / Giac',
-      description:
-        'CMake 构建的底层 C++ 代数引擎，静态链接 SymEngine/Giac 与 Boost 库。手写 parseAST 解析器将 MathJSON 转换为 SymEngine 表达式树，支持精确符号计算与超大数运算。',
-      tags: ['C++', 'SymEngine', 'Giac', 'Boost', 'N-API'],
-    },
-  ],
-
-  download: {
-    title: '获取 CalculatorX',
-    steps: [],
-    note: '也可通过开源渠道获取安装包。CalculatorX 基于 GPL 3.0 协议开源，源代码完全公开，欢迎审计与贡献。',
-    buttonLabel: 'AppGallery',
-    buttonUrl: 'https://appgallery.huawei.com/app/detail?id=com.startyi.calcx',
-    githubButton: '访问 GitHub',
-  },
-
-  footer: {
-    copyright: 'Yi Rui (易睿)',
+  nav: {
     links: [
-      { label: '使用帮助', href: '/docs' },
+      { label: '能力', href: '#capabilities' },
+      { label: '体验', href: '#showcase' },
+      { label: '技术', href: '#technology' },
+      { label: '文档', href: '/docs', external: true },
+    ],
+    download: '获取',
+    menuOpen: '打开导航菜单',
+    menuClose: '关闭导航菜单',
+  },
+  hero: {
+    eyebrow: '为 HarmonyOS NEXT 而生',
+    titleBefore: '不只计算答案，',
+    titleAccent: '更理解数学。',
+    titleAfter: '',
+    description: '从精确符号计算到函数图像，从方程组到矩阵与汇率。CalculatorX 把日常计算和进阶数学，放进一个流畅、原生的工作区。',
+    primaryAction: '从 AppGallery 获取',
+    secondaryAction: '查看开源项目',
+    visualAlt: 'CalculatorX 科学计算界面，展示根式的精确化简结果',
+    visualBadge: '精确结果，不止小数',
+    floatingFormula: 'f(x) = sin(x) / x',
+  },
+  proof: [
+    { value: '1.6.2', label: '当前版本' },
+    { value: '5 类', label: '函数图像' },
+    { value: '6×6', label: '矩阵支持' },
+    { value: '172', label: '货币与资产' },
+  ],
+  capabilities: {
+    eyebrow: '一个数学工作区',
+    title: '从日常运算，到真正的进阶数学',
+    description: '每个模块都围绕移动端重新设计，而不是把桌面计算器压缩进一块小屏幕。',
+    items: [
+      { icon: '∫', title: '科学计算与微积分', description: '三角、对数、导数、积分、极限、求和与求积，并保留分数、根式和符号表达式。', accent: 'blue' },
+      { icon: 'x₁', title: '方程与方程组', description: '求解一元方程和最多六元方程组，支持清晰的 cases 结构输入。', accent: 'orange' },
+      { icon: '▦', title: '矩阵与线性代数', description: '支持 1×1 至 6×6 矩阵、逆、转置、行列式、秩、rref、迹与特征值。', accent: 'violet' },
+      { icon: 'ƒ', title: '五类函数图像', description: '绘制显函数、参数方程、极坐标、隐函数和独立点，最多叠加十条。', accent: 'green' },
+      { icon: '¥', title: '实时汇率', description: '在 172 种货币与资产之间同步换算，支持搜索、排序、缓存与离线查看。', accent: 'orange' },
+      { icon: '↺', title: '统一历史记录', description: '按模块保存公式与结果，支持分类检索、结果回填和滑动删除。', accent: 'blue' },
+    ],
+  },
+  showcase: {
+    eyebrow: '看见能力，也看见体验',
+    title: '复杂数学，不必复杂地使用',
+    description: '在一个统一界面中输入、求解、切换结果形式，并把抽象表达式变成可以探索的图像。',
+    imageMissing: '新版截图待补充',
+    items: [
+      {
+        id: 'exact', tab: '精确计算', eyebrow: '精确与近似，自由切换', title: '答案不止是一个小数',
+        description: 'CalculatorX 会尽可能保留分数、根式、π 和符号表达式。需要近似值时，再通过 S⇄D 快速切换。',
+        points: ['符号结果与高精度小数', '分数、带分数与度分秒', '教科书级 LaTeX 排版'],
+        lightSrc: '/images/product/exact.png', darkSrc: '/images/product/exact-dark.png',
+        alt: 'CalculatorX 将一除以三显示为精确分数', fallbackFormula: '√8 = 2√2', fallbackLabel: '精确计算界面',
+      },
+      {
+        id: 'graphing', tab: '函数图像', eyebrow: '从表达式到图像', title: '看见函数如何变化',
+        description: '同时绘制最多十条函数，通过拖拽与双指缩放探索坐标空间，并为不同函数保留独立颜色与定义域。',
+        points: ['五种函数类型', '自适应采样与断点处理', '平移、缩放与多函数叠加'],
+        lightSrc: '/images/product/graphing.webp', darkSrc: '/images/product/graphing-dark.webp',
+        alt: 'CalculatorX 函数图像模块展示多条彩色函数曲线', fallbackFormula: 'y = sin(x)', fallbackLabel: '函数图像界面',
+      },
+      {
+        id: 'matrix', tab: '方程与矩阵', eyebrow: '结构化输入，直接求解', title: '把线性代数装进口袋',
+        description: '从多元方程组到矩阵运算，CalculatorX 使用原生键盘和二维公式模板，让复杂结构依然清晰。',
+        points: ['最多六元方程组', '1×1 至 6×6 矩阵', 'rank、rref、trace 与 eigenvalues'],
+        lightSrc: '/images/product/matrix-equation.webp', darkSrc: '/images/product/matrix-equation-dark.webp',
+        alt: 'CalculatorX 矩阵与方程求解界面', fallbackFormula: '[A]⁻¹ · b', fallbackLabel: '矩阵与方程界面',
+      },
+      {
+        id: 'exchange', tab: '汇率与历史', eyebrow: '数学工作区，也照顾日常', title: '计算、换算与记录连在一起',
+        description: '多币种列表同步换算，最近数据本地缓存；每个数学模块的输入和结果也会被结构化保存。',
+        points: ['172 种货币与资产', '整点更新与离线缓存', '跨模块历史检索与回填'],
+        lightSrc: '/images/product/exchange-history.webp', darkSrc: '/images/product/exchange-history-dark.webp',
+        alt: 'CalculatorX 汇率换算与历史记录界面', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: '汇率与历史界面',
+      },
+    ],
+  },
+  experience: {
+    eyebrow: '为触屏重新设计',
+    title: '像纸面一样清楚，像原生应用一样顺手',
+    description: '公式输入、Shift 第二功能、长按气泡、连续按键和触感反馈共同组成一套真正适合手机的数学交互。',
+    items: [
+      { number: '01', title: '所见即所得的公式', description: '分数、根式、积分、极限和矩阵在输入时就以二维结构呈现。' },
+      { number: '02', title: '少一点拥挤，多一点手感', description: 'Shift、长按与滑动承担第二功能，让键盘保持清楚，同时保留高效输入。' },
+      { number: '03', title: '本地优先，边界透明', description: '核心公式计算与历史记录主要留在设备端；汇率联网获取数据，并支持本地缓存。' },
+    ],
+    formulaInput: 'limₓ→0  sin(x) / x',
+    formulaOutput: '1',
+    formulaLabel: '符号计算 · 精确结果',
+  },
+  architecture: {
+    eyebrow: '技术不是装饰，是体验的基础',
+    title: '原生交互、专业排版与双 CAS 协同',
+    description: 'ArkUI 负责流畅交互，MathLive 把公式转成结构化 MathJSON，C++ 计算层再交给 SymEngine、Giac 与专用引擎处理。',
+    steps: [
+      { name: 'ArkUI', detail: '原生界面与触感' },
+      { name: 'MathLive', detail: '公式编辑与 MathJSON' },
+      { name: 'N-API', detail: '跨语言数据通道' },
+      { name: 'C++ Engines', detail: 'CAS、矩阵与绘图' },
+      { name: 'LaTeX / Canvas', detail: '精确结果与图像' },
+    ],
+    notes: ['SymEngine + Giac 双 CAS', 'RPN 与自适应图像采样', '本地 RDB 历史记录'],
+  },
+  openSource: {
+    eyebrow: '开源，而不是黑箱',
+    title: '公式可以验证，代码也可以',
+    description: 'CalculatorX 基于 GPLv3 开源。你可以审查计算链路、提交问题、参与改进，或从 Releases 获取开发版本。',
+    primaryAction: '访问 GitHub',
+    secondaryAction: '阅读架构文档',
+    badges: ['GPLv3', 'ArkTS', 'C++', 'SymEngine', 'Giac'],
+  },
+  download: {
+    eyebrow: '开始使用',
+    title: '把下一道题，交给 CalculatorX',
+    description: '普通用户推荐通过 AppGallery 安装与更新；开发版本和历史安装包可从 GitHub Releases 获取。',
+    appGallery: 'AppGallery 获取',
+    github: 'GitHub Releases',
+    footnote: '面向 HarmonyOS NEXT · 核心功能免费 · 无功能付费墙',
+  },
+  footer: {
+    statement: '面向 HarmonyOS NEXT 的原生数学工作区。',
+    links: [
+      { label: '使用文档', href: '/docs', external: true },
       { label: '隐私政策', href: '/privacy/' },
       { label: '用户协议', href: '/agreement/' },
+      { label: '问题反馈', href: 'https://github.com/StarHeartY/CalculatorX/issues/new', external: true },
     ],
-    email: 'support@startyi.com',
+    copyright: 'Yi Rui（易睿）',
   },
-
-  sections: {
-    featuresTitle: '功能特色',
-    featuresSubtitle: '集符号计算、专业排版、超大数运算于一身，重新定义移动端科学计算体验',
-    galleryTitle: '界面展示',
-    gallerySubtitle: '精心适配深浅色模式，专业排版一目了然',
-    architectureTitle: '技术架构',
-    architectureSubtitle: '创新三层架构：ArkTS 原生 UI · WebView 渲染引擎 · C++ 计算引擎',
-    downloadTitle: '获取 CalculatorX',
-    downloadSubtitle: '开源免费，无任何功能付费墙。现在就开启你的专业计算之旅',
-  },
-
-  screenshots: [
-    { src: '/images/screenshot-basic-math.webp', alt: 'CalculatorX 基础数学计算', label: '基础计算' },
-    { src: '/images/screenshot-advanced-math.webp', alt: 'CalculatorX 高等数学计算', label: '高等数学' },
-    { src: '/images/screenshot-big-digit.webp', alt: 'CalculatorX 超大数字计算', label: '大数计算' },
-    { src: '/images/screenshot-settings.webp', alt: 'CalculatorX 设置界面', label: '设置页面' },
-  ],
-
   ui: {
-    themeToggleDark: '深色模式',
-    themeToggleLight: '浅色模式',
+    switchLanguage: 'Switch to English',
     switchToDark: '切换到深色模式',
     switchToLight: '切换到浅色模式',
-    screenshotPreparing: '截图准备中…',
   },
 }
 
