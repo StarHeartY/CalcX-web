@@ -56,6 +56,8 @@ src/
 
 `src/animations/gsap.ts` 只负责注册和导出动效能力。需要编排动效的组件从该入口引用 `gsap`、`useGSAP` 或 `ScrollTrigger`，避免在多个组件中重复注册插件。
 
+具体动效通过 `useGSAP` 管理组件卸载时的清理，通过 `gsap.matchMedia()` 响应断点和 `prefers-reduced-motion`。预渲染只声明减少动态效果偏好，不会自动关闭 GSAP；组件需要在该条件下直接呈现可见的最终状态。
+
 ## 页面组合
 
 `src/App.tsx` 按顺序挂载以下组件：
