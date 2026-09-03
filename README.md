@@ -41,7 +41,7 @@ CalculatorX 官方产品网站，面向用户介绍这款为 HarmonyOS NEXT 打�
 - React 18、TypeScript、Vite 6
 - Vite 多页面构建，输出中文与英文静态入口
 - 结构化双语内容模型，而不是在组件中散落文案
-- CSS 设计变量、响应式布局与明暗主题
+- GSAP 固定场景、滚动叙事、响应式降级与明暗主题
 - Puppeteer 构建后预渲染，生成可直接部署的 HTML
 - GitHub Actions 同时发布到 GitHub Pages 与阿里云 ECS
 

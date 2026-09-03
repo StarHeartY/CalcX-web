@@ -1,16 +1,37 @@
+import { useRef } from 'react'
+import { gsap, useGSAP } from '../../animations/gsap'
 import { useContent } from '../../i18n/LocaleContext'
-import SectionHeading from '../ui/SectionHeading'
 
 const APP_GALLERY_URL = 'https://appgallery.huawei.com/app/detail?id=com.startyi.calcx'
 const RELEASES_URL = 'https://github.com/StarHeartY/CalculatorX/releases'
 
 export default function DownloadSection() {
+  const root = useRef<HTMLElement>(null)
   const { download } = useContent()
 
+  useGSAP(() => {
+    const media = gsap.matchMedia()
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.from('.download__inner > *', {
+        y: 60,
+        autoAlpha: 0,
+        duration: 0.85,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: root.current, start: 'top 72%', once: true },
+      })
+      gsap.to('.download__orbit', { rotate: 360, duration: 34, repeat: -1, ease: 'none' })
+    })
+    return () => media.revert()
+  }, { scope: root })
+
   return (
-    <section className="section download" id="download">
+    <section ref={root} className="download" id="download">
+      <div className="download__orbit" aria-hidden="true"><span>√</span><span>∫</span><span>π</span><span>Σ</span></div>
       <div className="shell download__inner">
-        <SectionHeading eyebrow={download.eyebrow} title={download.title} description={download.description} align="center" />
+        <p className="eyebrow"><span className="eyebrow-dot" />{download.eyebrow}</p>
+        <h2>{download.title}</h2>
+        <p className="download__description">{download.description}</p>
         <div className="download__actions">
           <a className="store-button" href={APP_GALLERY_URL} target="_blank" rel="noreferrer">
             <img src="/images/appgallery-icon.png" alt="" width="46" height="46" />
@@ -22,6 +43,7 @@ export default function DownloadSection() {
           </a>
         </div>
         <p className="download__footnote">{download.footnote}</p>
+        <span className="download__version">CALCULATORX / V1.6.2 / HARMONYOS NEXT</span>
       </div>
     </section>
   )

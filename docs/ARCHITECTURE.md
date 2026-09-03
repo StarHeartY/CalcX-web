@@ -56,7 +56,7 @@ src/
 
 `src/animations/gsap.ts` 只负责注册和导出动效能力。需要编排动效的组件从该入口引用 `gsap`、`useGSAP` 或 `ScrollTrigger`，避免在多个组件中重复注册插件。
 
-具体动效通过 `useGSAP` 管理组件卸载时的清理，通过 `gsap.matchMedia()` 响应断点和 `prefers-reduced-motion`。预渲染只声明减少动态效果偏好，不会自动关闭 GSAP；组件需要在该条件下直接呈现可见的最终状态。
+具体动效通过 `useGSAP` 管理组件卸载时的清理，通过 `gsap.matchMedia()` 响应断点和 `prefers-reduced-motion`。桌面端由 `ScrollSmoother` 提供平滑滚动，Showcase 和 Experience 使用固定场景，Technology 把纵向滚动映射为横向计算管线；移动端改用顺序进入动画，不保留长距离固定。预渲染声明减少动态效果偏好，各组件在该条件下直接呈现完整静态内容。
 
 ## 页面组合
 
@@ -67,14 +67,14 @@ src/
 | `Header` | 品牌、锚点导航、语言切换、主题切换与移动菜单 |
 | `HeroSection` | 产品定位、下载入口、源码入口和关键数字 |
 | `CapabilitiesSection` | 六组核心能力概览 |
-| `ShowcaseSection` | 可切换的四组产品场景与视觉展示 |
-| `ExperienceSection` | 触屏输入、原生交互与本地优先说明 |
-| `TechnologySection` | CalculatorX 应用本体的技术链路介绍 |
+| `ShowcaseSection` | 桌面固定滚动、移动顺序排列的四组产品场景 |
+| `ExperienceSection` | 以固定公式求解场景说明触屏输入、原生交互与本地优先 |
+| `TechnologySection` | 横向滚动展示 CalculatorX 应用本体的技术链路 |
 | `OpenSourceSection` | 开源定位与外部链接 |
 | `DownloadSection` | AppGallery 和 Releases 获取入口 |
 | `Footer` | 文档、法律页面、反馈和版权信息 |
 
-区块之间没有共享的业务状态。当前主要交互状态只有移动菜单、展示标签页和主题选择，因此不需要额外的状态管理库。
+区块之间没有共享的业务状态。当前主要交互状态只有移动菜单和主题选择；滚动进度与场景生命周期由 GSAP 上下文管理，因此不需要额外的状态管理库。
 
 ## 内容与双语机制
 
