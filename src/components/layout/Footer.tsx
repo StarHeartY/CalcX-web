@@ -7,30 +7,26 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
+      <div className="shell site-footer__statement">
+        <span>CALCULATORX®</span>
+        <p>{footer.statement}</p>
+      </div>
       <div className="shell site-footer__grid">
-        <div>
-          <a className="brand brand--footer" href={locale === 'en' ? '/en/' : '/'}>
-            <img src="/images/app-icon.png" alt="" width="40" height="40" />
-            <span>Calculator<span>X</span></span>
-          </a>
-          <p>{footer.statement}</p>
-        </div>
+        <a className="brand brand--footer" href={locale === 'en' ? '/en/' : '/'}>
+          <img src="/images/app-icon.png" alt="" width="44" height="44" />
+          <span>Calculator<span>X</span></span>
+        </a>
         <nav className="footer-links" aria-label="Footer navigation">
-          {footer.links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noreferrer' : undefined}
-            >
-              {link.label}
+          {footer.links.map((link, index) => (
+            <a key={link.href} href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noreferrer' : undefined}>
+              <span>0{index + 1}</span>{link.label}<i aria-hidden="true">↗</i>
             </a>
           ))}
         </nav>
       </div>
       <div className="shell site-footer__bottom">
         <span>© 2026{year > 2026 ? `–${year}` : ''} {footer.copyright}</span>
-        <span>GPLv3 · HarmonyOS NEXT</span>
+        <span>GPLV3 / HARMONYOS NEXT</span>
       </div>
     </footer>
   )
