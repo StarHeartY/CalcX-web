@@ -39,6 +39,8 @@ src/
 │   ├── layout/                # Header、Footer
 │   ├── sections/              # 主页的独立内容区块
 │   └── ui/                    # 可复用的展示与控制组件
+├── animations/
+│   └── gsap.ts                # GSAP、React Hook 与 ScrollTrigger 统一注册入口
 ├── data/
 │   ├── content.types.ts       # 双语内容的共享类型
 │   └── locales/               # 中文和英文内容对象
@@ -51,6 +53,8 @@ src/
 ```
 
 `public/` 中的内容会原样复制到构建产物，包括产品图片、图标、法律页面、站点地图和 robots.txt。`dist/` 是构建结果，不是源码入口。
+
+`src/animations/gsap.ts` 只负责注册和导出动效能力。需要编排动效的组件从该入口引用 `gsap`、`useGSAP` 或 `ScrollTrigger`，避免在多个组件中重复注册插件。
 
 ## 页面组合
 
@@ -137,7 +141,7 @@ flowchart LR
 1. `tsc -b` 检查 TypeScript 项目；
 2. Vite 以 `index.html` 和 `en/index.html` 为两个入口生成 `dist/`；
 3. `scripts/prerender.mjs` 在本地 4173 端口临时托管 `dist/`；
-4. Puppeteer 依次访问 `/` 和 `/en/`，等待网络空闲后把完整 DOM 写回对应 HTML；
+4. Puppeteer 以减少动态效果模式依次访问 `/` 和 `/en/`，等待网络空闲后把完整 DOM 写回对应 HTML；
 5. 临时浏览器和服务器关闭，`dist/` 成为最终部署目录。
 
 预渲染脚本优先读取 `PUPPETEER_EXECUTABLE_PATH`，随后检查 Windows 上常见的 Chrome 与 Edge 路径。在 CI 中，Puppeteer 可以使用依赖安装阶段准备的浏览器。
@@ -177,6 +181,7 @@ flowchart LR
 | 某个区块的交互或标记 | `src/components/sections/` |
 | 导航、页脚或主题按钮 | `src/components/layout/`、`src/components/ui/` |
 | 颜色、排版和响应式布局 | `src/styles/` |
+| GSAP 动效注册与 ScrollTrigger | `src/animations/gsap.ts` |
 | SEO 与分享摘要 | `index.html`、`en/index.html` |
 | 静态法律页和旧入口 | `public/` |
 | 多页面输出 | `vite.config.ts` |

@@ -72,6 +72,9 @@ async function prerender() {
   try {
     const page = await browser.newPage()
     await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 })
+    await page.emulateMediaFeatures([
+      { name: 'prefers-reduced-motion', value: 'reduce' },
+    ])
 
     for (const target of [
       { route: '/', output: 'index.html' },
