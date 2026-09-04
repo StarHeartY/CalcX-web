@@ -194,17 +194,22 @@
   border-radius: 50%;
 }
 
-/* 当前项目所使用的产品截图 */
+/* 产品截图容器 */
 .showcase .product-visual__picture {
   position: relative;
   z-index: 2;
+  display: grid;
   width: min(100%, 560px);
-  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
 }
 
 .showcase .product-visual__picture img {
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
   object-fit: contain;
   filter: drop-shadow(0 24px 30px rgba(0, 0, 0, .16));
 }

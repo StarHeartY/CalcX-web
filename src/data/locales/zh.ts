@@ -75,17 +75,17 @@ const zh: SiteContent = {
         alt: 'CalculatorX 矩阵运算界面，展示矩阵求逆与乘法结果', fallbackFormula: '[A]⁻¹ · b', fallbackLabel: '矩阵与方程界面',
       },
       {
-        id: 'exchange', tab: '汇率与历史', eyebrow: '数学工作区，也照顾日常', title: '全局历史记录',
-        description: '多币种列表同步换算，最近数据本地缓存；每个数学模块的输入和结果也会被结构化保存。',
-        points: ['172 种货币与资产', '整点更新与离线缓存', '跨模块历史检索与回填'],
+        id: 'exchange', tab: '汇率换算', eyebrow: '常用货币，一次看清', title: '多种货币，同步换算',
+        description: '输入任意金额，即可同步查看多种货币的换算结果；支持搜索、排序、在线更新和本地缓存。',
+        points: ['172 种货币与资产', '多币种同步换算', '最新汇率与离线缓存'],
         lightSrc: '/images/product/exchange-history.webp', darkSrc: '/images/product/exchange-history-dark.webp',
-        alt: 'CalculatorX 全局历史记录界面，展示不同模块的公式与结果', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: '汇率与历史界面',
+        alt: 'CalculatorX 汇率换算界面，展示多种货币的同步换算结果', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: '汇率换算界面',
       },
     ],
   },
   experience: {
-    eyebrow: '为触屏重新设计',
-    title: '像纸面一样清楚，像原生应用一样顺手',
+    eyebrow: '为触屏量身定做',
+    title: '精致排版，与手写无异',
     description: '公式输入、Shift 第二功能、长按气泡、连续按键和触感反馈共同组成一套真正适合手机的数学交互。',
     items: [
       { number: '01', title: '所见即所得的公式', description: '分数、根式、积分、极限和矩阵在输入时就以二维结构呈现。' },
@@ -112,7 +112,7 @@ const zh: SiteContent = {
   openSource: {
     eyebrow: '开源，而不是黑箱',
     title: '代码和公式一样可验证',
-    description: 'CalculatorX 基于 GPLv3 开源。你可以审查计算链路、提交问题、参与改进，或从 Releases 获取开发版本。',
+    description: 'CalculatorX 基于 GPLv3 开源。欢迎审查计算链路、提交问题、参与改进，或从 Releases 获取开发版本。',
     primaryAction: '访问 GitHub',
     secondaryAction: '阅读架构文档',
     badges: ['GPLv3', 'ArkTS', 'C++', 'SymEngine', 'Giac'],
@@ -123,7 +123,7 @@ const zh: SiteContent = {
     description: '普通用户推荐通过 AppGallery 安装与更新；开发版本和历史安装包可从 GitHub Releases 获取。',
     appGallery: 'AppGallery',
     github: 'GitHub Releases',
-    footnote: '面向 HarmonyOS NEXT · 核心功能免费 · 无功能付费墙',
+    footnote: '面向 HarmonyOS NEXT · 开源免费',
   },
   footer: {
     statement: '面向 HarmonyOS NEXT 的原生数学工作区。',

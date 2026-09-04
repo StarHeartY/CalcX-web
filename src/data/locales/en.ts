@@ -75,17 +75,17 @@ const en: SiteContent = {
         alt: 'CalculatorX matrix workspace showing inverse and multiplication results', fallbackFormula: '[A]⁻¹ · b', fallbackLabel: 'Matrix and equation screens',
       },
       {
-        id: 'exchange', tab: 'Rates & history', eyebrow: 'A math workspace for daily life too', title: 'Calculate, convert, and keep the result',
-        description: 'Convert a whole list of currencies at once with local caching, while every math module keeps structured expressions and results.',
-        points: ['172 currencies and assets', 'Hourly refresh and offline cache', 'Cross-module history, search, and reuse'],
+        id: 'exchange', tab: 'Exchange rates', eyebrow: 'Every currency in one clear view', title: 'Convert once, compare every currency',
+        description: 'Enter an amount and see it converted across multiple currencies at once, with search, sorting, online rate updates, and local caching.',
+        points: ['172 currencies and assets', 'Synchronized multi-currency conversion', 'Fresh rates with offline cache'],
         lightSrc: '/images/product/exchange-history.webp', darkSrc: '/images/product/exchange-history-dark.webp',
-        alt: 'CalculatorX global history showing formulas and results from several modules', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: 'Exchange and history screens',
+        alt: 'CalculatorX exchange-rate screen showing synchronized conversions across multiple currencies', fallbackFormula: '100 CNY → 13.92 USD', fallbackLabel: 'Exchange-rate screen',
       },
     ],
   },
   experience: {
-    eyebrow: 'Redesigned for touch',
-    title: 'As clear as paper. As fluid as a native app.',
+    eyebrow: 'Tailored for touch',
+    title: 'Exquisite layout, just like handwriting',
     description: 'Live formula layout, Shift functions, slide bubbles, repeat keys, and haptics create a math input system that belongs on a phone.',
     items: [
       { number: '01', title: 'WYSIWYG formulas', description: 'Fractions, radicals, integrals, limits, and matrices stay two-dimensional while you type.' },
@@ -123,7 +123,7 @@ const en: SiteContent = {
     description: 'AppGallery is recommended for installation and updates. Development and historical builds are available from GitHub Releases.',
     appGallery: 'AppGallery',
     github: 'GitHub Releases',
-    footnote: 'Built for HarmonyOS NEXT · Free core features · No feature paywall',
+    footnote: 'Built for HarmonyOS NEXT · Open source and free',
   },
   footer: {
     statement: 'A native math workspace for HarmonyOS NEXT.',
