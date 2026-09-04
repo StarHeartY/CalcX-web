@@ -18,8 +18,8 @@ const zh: SiteContent = {
   },
   hero: {
     eyebrow: '为 HarmonyOS NEXT 而生',
-    titleBefore: '不只计算答案，',
-    titleAccent: '更理解数学。',
+    titleBefore: '不只计算答案',
+    titleAccent: '更理解数学',
     titleAfter: '',
     description: '从精确符号计算到函数图像，从方程组到矩阵与汇率。CalculatorX 把日常计算和进阶数学，放进一个流畅、原生的工作区。',
     primaryAction: '从 AppGallery 获取',
