@@ -51,7 +51,7 @@
 .experience__title h2 {
   max-width: 10ch;
   font-size: clamp(3.4rem, 6.4vw, 6.8rem);
-  line-height: .88;
+  line-height: 1;
   letter-spacing: -.075em;
 }
 /* 原生体验区主标题下方介绍文字 */

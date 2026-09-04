@@ -19,7 +19,7 @@ export default function HeroSection() {
         .from('.hero__eyebrow', { y: 18, autoAlpha: 0, duration: 0.55 })
         .from('.hero-title__line', { yPercent: 115, rotate: 3, duration: 0.9, stagger: 0.09 }, '-=0.25')
         .from('.hero__description, .hero__actions', { y: 28, autoAlpha: 0, duration: 0.7, stagger: 0.1 }, '-=0.45')
-        .from('.hero-product-frame', { y: 100, rotate: 8, scale: 0.86, autoAlpha: 0, duration: 1.1 }, '-=0.9')
+        .from('.hero-product-frame', { y: 100, rotate: 5, scale: 0.86, autoAlpha: 0, duration: 1.1 }, '-=0.9')
         .from('.hero-float', { scale: 0.7, autoAlpha: 0, duration: 0.55, stagger: 0.12 }, '-=0.45')
         .from('.hero-proof__item', { y: 22, autoAlpha: 0, duration: 0.5, stagger: 0.08 }, '-=0.4')
 
@@ -35,7 +35,7 @@ export default function HeroSection() {
         },
       })
         .to('.hero__copy', { yPercent: -20, autoAlpha: 0.15, ease: 'none' }, 0)
-        .to('.hero-product-frame', { yPercent: 18, rotate: -5, scale: 0.92, ease: 'none' }, 0)
+        .to('.hero-product-anchor', { rotate: -5, scale: 0.92, ease: 'none' }, 0)
         .to('.hero__mesh', { scale: 1.25, rotate: 12, ease: 'none' }, 0)
     })
 
@@ -71,10 +71,12 @@ export default function HeroSection() {
         <div className="hero-visual">
           <div className="hero-visual__orbit hero-visual__orbit--one" aria-hidden="true" />
           <div className="hero-visual__orbit hero-visual__orbit--two" aria-hidden="true" />
-          <div className="hero-product-frame" data-speed="0.94">
-            <div className="hero-phone">
-              <img className="theme-image theme-image--light" src="/images/product/scientific.png" alt={hero.visualAlt} />
-              <img className="theme-image theme-image--dark" src="/images/product/scientific-dark.png" alt={hero.visualAlt} />
+          <div className="hero-product-anchor">
+            <div className="hero-product-frame">
+              <div className="hero-phone">
+                <img className="theme-image theme-image--light" src="/images/product/scientific.png" alt={hero.visualAlt} />
+                <img className="theme-image theme-image--dark" src="/images/product/scientific-dark.png" alt={hero.visualAlt} />
+              </div>
             </div>
           </div>
           <div className="hero-float hero-float--result">
