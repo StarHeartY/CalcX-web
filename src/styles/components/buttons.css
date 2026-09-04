@@ -1,0 +1,77 @@
+/* 全站普通按钮：文字大小、按钮高度和左右留白 */
+.button {
+  display: inline-flex;
+  min-height: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 760;
+  letter-spacing: -.01em;
+  cursor: pointer;
+  transition: transform 180ms var(--ease), box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.button:hover {
+  transform: translateY(-3px);
+}
+.button--primary {
+  color: white;
+  background: var(--blue);
+  box-shadow: 0 15px 34px color-mix(in srgb, var(--blue) 30%, transparent);
+}
+.button--primary:hover {
+  background: var(--blue-deep);
+}
+.button--ghost {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface-solid) 74%, transparent);
+  border-color: var(--line);
+  backdrop-filter: blur(18px);
+}
+.button--ghost:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+}
+.button--ghost svg,
+.button--dark svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+/* 小号按钮，例如顶栏右侧“获取”按钮 */
+.button--small {
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: .78rem;
+}
+/* 大号按钮：按钮高度和左右留白 */
+.button--large {
+  min-height: 66px;
+  padding: 0 28px;
+}
+.button--dark {
+  color: white;
+  background: #111216;
+}
+.button--light {
+  color: #101114;
+  background: white;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 720;
+}
+.text-link span {
+  transition: transform 180ms var(--ease);
+}
+.text-link:hover span {
+  transform: translateX(5px);
+}
+.text-link--light {
+  color: rgba(255, 255, 255, .84);
+}

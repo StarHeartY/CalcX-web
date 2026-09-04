@@ -1,0 +1,371 @@
+/* Showcase story */
+.showcase {
+  position: relative;
+  z-index: 3;
+  background: #f1efe8;
+}
+:root[data-theme="dark"] .showcase {
+  background: #121419;
+}
+.showcase-pin {
+  position: relative;
+  height: 100svh;
+  min-height: 720px;
+  overflow: hidden;
+}
+.showcase-heading {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: .8fr 1.5fr;
+  gap: 7vw;
+  padding-top: 94px;
+}
+.showcase-heading .eyebrow {
+  padding-top: 12px;
+}
+.showcase-heading>div {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 3vw;
+  align-items: end;
+}
+/* 产品展示区主标题 */
+.showcase-heading h2 {
+  font-size: clamp(2.7rem, 5.2vw, 5.5rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+/* 产品展示区主标题旁的介绍文字 */
+.showcase-heading>div>p {
+  max-width: 430px;
+  padding-bottom: 5px;
+  color: var(--ink-soft);
+  font-size: .88rem;
+  line-height: 1.7;
+}
+/* 产品展示区滚动进度与场景编号 */
+.showcase-index {
+  position: relative;
+  z-index: 7;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 25px;
+}
+.showcase-index>div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: .57rem;
+  text-transform: uppercase;
+}
+.showcase-index small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.showcase-index i {
+  position: relative;
+  grid-column: 1 / -1;
+  display: block;
+  height: 2px;
+  overflow: hidden;
+  background: var(--line);
+}
+.showcase-index b {
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+}
+.showcase-scenes {
+  position: relative;
+  z-index: 4;
+  height: calc(100% - 250px);
+}
+.showcase-scene {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: 7vw;
+  align-items: center;
+}
+.showcase-scene__copy {
+  position: relative;
+  padding-top: 30px;
+}
+.showcase-scene__number {
+  display: block;
+  margin-bottom: 26px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+}
+/* 产品展示场景眉题文字，字号继承全站 .eyebrow */
+.showcase-scene__copy .eyebrow {
+  margin-bottom: 18px;
+}
+/* 产品展示场景大标题 */
+.showcase-scene__copy h3 {
+  max-width: 10ch;
+  font-size: clamp(3rem, 5.4vw, 5.9rem);
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+/* 产品展示场景介绍文字 */
+.showcase-scene__copy>p:not(.eyebrow) {
+  max-width: 500px;
+  margin-top: 24px;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  line-height: 1.74;
+}
+.showcase-scene__copy ul {
+  display: grid;
+  gap: 9px;
+  margin-top: 28px;
+}
+/* 产品展示场景功能要点列表 */
+.showcase-scene__copy li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .78rem;
+  font-weight: 680;
+}
+.showcase-scene__copy li span {
+  color: var(--blue);
+}
+.showcase-scene__visual {
+  position: relative;
+  display: grid;
+  height: min(58vh, 600px);
+  place-items: center;
+}
+.showcase-scene__halo {
+  position: absolute;
+  width: min(50vw, 610px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--blue) 14%, transparent);
+  filter: blur(2px);
+}
+.showcase-scene--graphing .showcase-scene__halo {
+  background: color-mix(in srgb, var(--orange) 17%, transparent);
+}
+.showcase-scene--matrix .showcase-scene__halo {
+  background: color-mix(in srgb, var(--violet) 19%, transparent);
+}
+.showcase-scene--exchange .showcase-scene__halo {
+  background: color-mix(in srgb, var(--green) 17%, transparent);
+}
+.product-visual__picture {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: min(56vh, 580px);
+}
+.product-visual__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 32px 40px rgba(20, 24, 36, .2));
+}
+.product-visual__fallback {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(100%, 680px);
+  height: min(50vh, 520px);
+  place-items: center;
+  overflow: hidden;
+  color: #111;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 38px;
+  box-shadow: var(--shadow-md);
+}
+.fallback-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(20, 87, 255, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 87, 255, .08) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+.fallback-curve {
+  position: absolute;
+  inset: auto 0 20%;
+  width: 100%;
+}
+.fallback-curve path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 5;
+}
+/* 产品截图缺失时显示的备用公式 */
+.fallback-formula {
+  position: relative;
+  font-family: var(--font-math);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+}
+/* 备用产品画面底部说明文字 */
+.fallback-caption {
+  position: absolute;
+  right: 26px;
+  bottom: 23px;
+  left: 26px;
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+  font-size: .7rem;
+}
+/* 产品展示场景右下角序号标签 */
+.showcase-scene__label {
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+  z-index: 3;
+  padding: 8px 12px;
+  color: var(--ink-soft);
+  background: color-mix(in srgb, var(--surface-solid) 76%, transparent);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: .55rem;
+  letter-spacing: .1em;
+  backdrop-filter: blur(18px);
+}
+/* 产品展示区右下角滚动提示 */
+.showcase-corner {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: .51rem;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  text-align: right;
+}
+@media (max-width: 1180px) {
+
+  .showcase-heading>div {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-heading>div>p {
+    display: none;
+  }
+}
+@media (max-width: 900px),
+(prefers-reduced-motion: reduce) {
+  .showcase-pin {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 90px 0;
+  }
+
+  .showcase-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 0;
+  }
+
+  .showcase-heading>div {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-heading>div>p {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .showcase-index,
+  .showcase-corner {
+    display: none;
+  }
+
+  .showcase-scenes {
+    display: grid;
+    height: auto;
+    gap: 90px;
+    margin-top: 70px;
+  }
+
+  .showcase-scene {
+    position: relative;
+    inset: auto;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    min-height: 620px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* 平板端、手机端或减少动态效果时：产品展示场景标题字号 */
+  .showcase-scene__copy h3 {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .showcase-scene__visual {
+    height: 520px;
+  }
+
+  .product-visual__picture {
+    height: 500px;
+  }
+}
+@media (max-width: 700px) {
+
+  /* 手机端：产品展示区主标题字号 */
+  .showcase-heading h2 {
+    font-size: 3.3rem;
+  }
+
+  .showcase-scenes {
+    gap: 105px;
+  }
+
+  .showcase-scene {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 32px;
+    padding-top: 32px;
+  }
+
+  .showcase-scene__copy {
+    padding: 0;
+  }
+
+  /* 手机端：产品展示场景标题字号 */
+  .showcase-scene__copy h3 {
+    font-size: 3.45rem;
+  }
+
+  .showcase-scene__visual {
+    height: 420px;
+    order: -1;
+  }
+
+  .product-visual__picture {
+    height: 410px;
+  }
+
+  .showcase-scene__halo {
+    width: 90vw;
+  }
+
+  .showcase-scene__label {
+    right: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 901px) {
+  .showcase-scenes {
+    gap: 60px;
+  }
+
+  .showcase-scene {
+    padding: 50px 0;
+  }
+}

@@ -1,0 +1,59 @@
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 8;
+  padding: 76px 0 26px;
+  color: #f7f6f2;
+  background: #0d0e11;
+}
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7vw;
+  padding-bottom: 70px;
+}
+.brand--footer {
+  color: white;
+}
+/* 页脚品牌下方介绍文字 */
+.site-footer__grid>div>p {
+  max-width: 360px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, .45);
+  font-size: .8rem;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+  align-content: start;
+}
+/* 页脚链接文字 */
+.footer-links a {
+  color: rgba(255, 255, 255, .58);
+  font-size: .8rem;
+}
+.footer-links a:hover {
+  color: white;
+}
+/* 页脚最底部版权与系统信息 */
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  color: rgba(255, 255, 255, .32);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+}
+@media (max-width: 700px) {
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    gap: 7px;
+  }
+}

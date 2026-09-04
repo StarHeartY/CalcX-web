@@ -1,0 +1,184 @@
+/* Open source */
+.open-source {
+  position: relative;
+  z-index: 6;
+  padding: clamp(100px, 12vw, 180px) 0;
+  background: var(--bg);
+}
+.open-source__card {
+  display: grid;
+  min-height: 650px;
+  grid-template-columns: .88fr 1.12fr;
+  overflow: hidden;
+  color: white;
+  background: var(--blue);
+  border-radius: 42px;
+  box-shadow: 0 44px 120px color-mix(in srgb, var(--blue) 25%, transparent);
+}
+.open-source__mark {
+  position: relative;
+  display: grid;
+  min-height: 530px;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .12);
+}
+.open-source__mark::before,
+.open-source__mark::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, .2);
+}
+.open-source__mark::before {
+  transform: rotate(45deg);
+}
+.open-source__mark::after {
+  transform: rotate(-45deg);
+}
+/* 开源区左侧“GPL”大字 */
+.open-source__mark strong {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: clamp(4rem, 8vw, 8rem);
+  letter-spacing: -.12em;
+}
+.open-source__mark svg {
+  position: absolute;
+  z-index: 2;
+  width: 68%;
+  fill: none;
+  stroke: rgba(255, 255, 255, .2);
+  stroke-width: 1.2;
+}
+.open-source__ring {
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(255, 255, 255, .36);
+  border-radius: 50%;
+}
+/* 开源区左侧圆环文字 */
+.open-source__ring span {
+  position: absolute;
+  top: 48%;
+  left: -22%;
+  width: 144%;
+  color: rgba(255, 255, 255, .36);
+  font-family: var(--font-mono);
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-align: center;
+}
+.open-source__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(50px, 7vw, 100px);
+}
+.open-source__copy .eyebrow {
+  color: rgba(255, 255, 255, .66);
+}
+/* 开源区主标题 */
+.open-source__copy h2 {
+  max-width: 10ch;
+  margin-top: 25px;
+  font-size: clamp(3.3rem, 6vw, 6.4rem);
+  line-height: .88;
+  letter-spacing: -.073em;
+}
+/* 开源区介绍文字 */
+.open-source__copy>p:not(.eyebrow) {
+  max-width: 600px;
+  margin-top: 27px;
+  color: rgba(255, 255, 255, .68);
+  font-size: .94rem;
+  line-height: 1.75;
+}
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 29px;
+}
+/* 开源区 GPLv3、ArkTS 等技术标签 */
+.badge-row span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, .27);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: .54rem;
+}
+.open-source__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-top: 34px;
+}
+@media (max-width: 900px) {
+
+  .open-source__card {
+    grid-template-columns: 1fr;
+  }
+
+  .open-source__mark {
+    min-height: 380px;
+  }
+
+  .open-source__mark svg {
+    width: 50%;
+  }
+
+  .open-source__ring {
+    width: 58%;
+  }
+
+  .open-source__copy {
+    padding: 58px 36px 70px;
+  }
+
+  /* 平板端与手机端：开源区主标题字号 */
+  .open-source__copy h2 {
+    font-size: clamp(3.4rem, 10vw, 6rem);
+  }
+}
+@media (max-width: 700px) {
+
+  .open-source {
+    padding: 70px 0;
+  }
+
+  .open-source__card {
+    border-radius: 28px;
+  }
+
+  .open-source__mark {
+    min-height: 300px;
+  }
+
+  /* 手机端：开源区左侧“GPL”大字 */
+  .open-source__mark strong {
+    font-size: 4.6rem;
+  }
+
+  .open-source__ring {
+    width: 72%;
+  }
+
+  .open-source__copy {
+    padding: 46px 24px 55px;
+  }
+
+  /* 手机端：开源区主标题字号 */
+  .open-source__copy h2 {
+    font-size: 3.7rem;
+  }
+
+  .open-source__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,251 @@
+/* Technology */
+.technology {
+  position: relative;
+  z-index: 5;
+  height: 100svh;
+  min-height: 760px;
+  overflow: hidden;
+  color: #f7f6f2;
+  background: #0d0e11;
+}
+.technology::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 38%;
+  width: 55vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(20, 87, 255, .18);
+  filter: blur(100px);
+}
+.technology__intro {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: .75fr 1.6fr;
+  gap: 5vw;
+  padding-top: 86px;
+}
+.technology__intro .eyebrow {
+  padding-top: 12px;
+  color: #85a6ff;
+}
+.technology__intro>div {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 3vw;
+  align-items: end;
+}
+/* 技术区主标题 */
+.technology__intro h2 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 5.2vw, 5.4rem);
+  line-height: .91;
+  letter-spacing: -.068em;
+}
+/* 技术区主标题旁的介绍文字 */
+.technology__intro>div>p {
+  padding-bottom: 5px;
+  color: rgba(255, 255, 255, .52);
+  font-size: .82rem;
+  line-height: 1.68;
+}
+.pipeline {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 26px;
+  padding: 58px max(32px, calc((100vw - var(--shell)) / 2)) 80px;
+}
+.pipeline__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 26px;
+}
+.pipeline__step {
+  display: flex;
+  width: min(31vw, 430px);
+  min-width: 380px;
+  height: min(50vh, 470px);
+  min-height: 420px;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .045);
+  backdrop-filter: blur(16px);
+}
+/* 技术流程卡片顶部编号与类型 */
+.pipeline__step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, .38);
+  font-family: var(--font-mono);
+  font-size: .58rem;
+  letter-spacing: .08em;
+}
+/* 技术流程卡片圆形符号 */
+.pipeline__symbol {
+  display: grid;
+  width: 110px;
+  height: 110px;
+  margin-top: 42px;
+  place-items: center;
+  color: #0d0e11;
+  background: #e9ff5b;
+  border-radius: 50%;
+  font-family: var(--font-math);
+  font-size: 3.4rem;
+}
+.pipeline__group:nth-child(2) .pipeline__symbol {
+  background: #7fa2ff;
+}
+.pipeline__group:nth-child(3) .pipeline__symbol {
+  background: #ff8465;
+}
+.pipeline__group:nth-child(4) .pipeline__symbol {
+  background: #a995ff;
+}
+.pipeline__group:nth-child(5) .pipeline__symbol {
+  background: #72dcb3;
+}
+/* 技术流程卡片标题 */
+.pipeline__step strong {
+  margin-top: auto;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+/* 技术流程卡片说明文字 */
+.pipeline__step>p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, .5);
+  font-size: .78rem;
+}
+/* 技术流程卡片底部技术标签 */
+.pipeline__step-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, .34);
+  font-family: var(--font-mono);
+  font-size: .5rem;
+}
+.pipeline__step-bottom i {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, .2);
+}
+.pipeline__arrow {
+  color: rgba(255, 255, 255, .35);
+  font-size: 2rem;
+}
+.technology__notes {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+}
+/* 技术区底部补充标签 */
+.technology__notes span {
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, .48);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: .52rem;
+}
+@media (max-width: 900px),
+(prefers-reduced-motion: reduce) {
+
+  .technology {
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    padding: 100px 0;
+  }
+
+  .technology__intro {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-top: 0;
+  }
+
+  .technology__intro>div {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .technology__intro>div>p {
+    max-width: 620px;
+  }
+
+  .pipeline {
+    display: grid;
+    width: min(calc(100% - 36px), var(--shell));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 60px auto 0;
+    padding: 0;
+  }
+
+  .pipeline__group {
+    display: contents;
+  }
+
+  .pipeline__step {
+    width: 100%;
+    min-width: 0;
+    height: 440px;
+    min-height: 0;
+  }
+
+  .pipeline__arrow {
+    display: none;
+  }
+
+  .technology__notes {
+    position: relative;
+    bottom: auto;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 700px) {
+
+  /* 手机端：技术区主标题字号 */
+  .technology__intro h2 {
+    font-size: 3.25rem;
+  }
+
+  .pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline__step {
+    height: 380px;
+  }
+
+  /* 手机端：技术流程卡片圆形符号尺寸 */
+  .pipeline__symbol {
+    width: 88px;
+    height: 88px;
+    margin-top: 32px;
+    font-size: 2.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 901px) {
+
+  .pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

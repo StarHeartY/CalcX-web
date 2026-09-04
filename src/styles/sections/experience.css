@@ -1,0 +1,304 @@
+/* Touch experience */
+.experience {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  overflow: hidden;
+  color: #111216;
+  background: #ff6845;
+}
+.experience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255, 255, 255, .17), transparent 44%), linear-gradient(rgba(17, 18, 22, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 18, 22, .1) 1px, transparent 1px);
+  background-size: auto, 46px 46px, 46px 46px;
+}
+/* 原生体验区背景超大装饰文字 */
+.experience__watermark {
+  position: absolute;
+  right: -1vw;
+  bottom: -3vw;
+  color: rgba(17, 18, 22, .07);
+  font-size: clamp(7rem, 18vw, 18rem);
+  font-weight: 900;
+  line-height: .68;
+  letter-spacing: -.09em;
+  text-align: right;
+}
+.experience__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 9vw;
+  align-items: center;
+  padding-block: 96px;
+  perspective: 1200px;
+}
+.experience__title .eyebrow {
+  margin-bottom: 28px;
+  color: #111216;
+}
+.experience__title .eyebrow-dot {
+  background: #111216;
+  box-shadow: 0 0 0 5px rgba(17, 18, 22, .12);
+}
+/* 原生体验区主标题 */
+.experience__title h2 {
+  max-width: 10ch;
+  font-size: clamp(3.4rem, 6.4vw, 6.8rem);
+  line-height: .88;
+  letter-spacing: -.075em;
+}
+/* 原生体验区主标题下方介绍文字 */
+.experience__title>p:not(.eyebrow) {
+  max-width: 590px;
+  margin-top: 27px;
+  color: rgba(17, 18, 22, .68);
+  font-size: .96rem;
+  line-height: 1.76;
+}
+.experience-list {
+  display: grid;
+  margin-top: 42px;
+  border-top: 1px solid rgba(17, 18, 22, .28);
+}
+.experience-list article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  padding: 19px 0;
+  border-bottom: 1px solid rgba(17, 18, 22, .28);
+}
+/* 原生体验功能列表左侧编号 */
+.experience-list article>span {
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+}
+/* 原生体验功能列表标题 */
+.experience-list h3 {
+  font-size: 1rem;
+  letter-spacing: -.025em;
+}
+/* 原生体验功能列表说明文字 */
+.experience-list p {
+  max-width: 540px;
+  margin-top: 5px;
+  color: rgba(17, 18, 22, .62);
+  font-size: .76rem;
+  line-height: 1.62;
+}
+.formula-demo {
+  position: relative;
+  overflow: hidden;
+  color: #111216;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 32px;
+  box-shadow: 0 50px 100px rgba(86, 20, 5, .28);
+  transform: rotateZ(2deg);
+  transform-style: preserve-3d;
+}
+/* 演示计算器顶部状态栏文字 */
+.formula-demo__top {
+  display: flex;
+  height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(17, 18, 22, .1);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .06em;
+}
+.formula-demo__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.formula-demo__status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2ac37b;
+  box-shadow: 0 0 0 5px rgba(42, 195, 123, .15);
+}
+.formula-demo__canvas {
+  position: relative;
+  display: grid;
+  min-height: 340px;
+  align-content: center;
+  padding: 54px;
+  background: linear-gradient(rgba(20, 87, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 87, 255, .07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.formula-demo__caption {
+  position: absolute;
+  top: 18px;
+  left: 21px;
+  color: rgba(17, 18, 22, .38);
+  font-family: var(--font-mono);
+  font-size: .52rem;
+  letter-spacing: .1em;
+}
+/* 演示计算器输入公式 */
+.formula-demo__input {
+  font-family: var(--font-math);
+  font-size: clamp(2.2rem, 4.2vw, 4.6rem);
+  letter-spacing: -.04em;
+}
+.formula-demo__line {
+  width: 100%;
+  height: 2px;
+  margin: 24px 0;
+  background: #111216;
+}
+/* 演示计算器主要计算结果 */
+.formula-demo__output {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 40px;
+  color: var(--blue);
+  font-family: var(--font-math);
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: .8;
+}
+/* 演示计算器结果后的辅助文字 */
+.formula-demo__output span {
+  color: #111216;
+  font-size: .32em;
+}
+.formula-demo__functions {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  padding: 10px 12px 0;
+}
+/* 演示计算器功能键与数字键尺寸及文字 */
+.formula-demo__functions span,
+.formula-demo__keys span {
+  display: grid;
+  min-height: 46px;
+  place-items: center;
+  background: #ebece9;
+  border: 1px solid rgba(17, 18, 22, .08);
+  border-radius: 13px;
+  font-family: var(--font-math);
+  font-size: .84rem;
+}
+.formula-demo__keys {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
+  padding: 10px 12px 12px;
+}
+.formula-demo__keys span {
+  min-height: 55px;
+  background: #f5f5f3;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+.formula-demo__keys .key-orange {
+  color: white;
+  background: var(--orange);
+}
+.formula-demo__keys .key-blue {
+  color: white;
+  background: var(--blue);
+}
+@media (max-width: 1180px) {
+
+  .experience__grid {
+    gap: 5vw;
+  }
+}
+@media (max-width: 900px) {
+
+  .experience {
+    min-height: auto;
+  }
+
+  .experience__grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+    padding-block: 100px;
+  }
+
+  /* 平板端与手机端：原生体验区主标题字号 */
+  .experience__title h2 {
+    font-size: clamp(3.5rem, 11vw, 6.4rem);
+  }
+
+  .formula-demo {
+    width: min(100%, 680px);
+    justify-self: center;
+    transform: rotateZ(1deg);
+  }
+
+  /* 平板端与手机端：原生体验区背景装饰文字 */
+  .experience__watermark {
+    bottom: 3%;
+    font-size: 24vw;
+  }
+}
+@media (max-width: 700px) {
+
+  .experience__grid {
+    padding-block: 90px;
+  }
+
+  /* 手机端：原生体验区主标题字号 */
+  .experience__title h2 {
+    font-size: 3.65rem;
+  }
+
+  .experience-list article {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .formula-demo {
+    border-radius: 24px;
+  }
+
+  .formula-demo__top {
+    height: 52px;
+    padding: 0 16px;
+  }
+
+  .formula-demo__canvas {
+    min-height: 260px;
+    padding: 42px 26px 28px;
+  }
+
+  /* 手机端：演示计算器输入公式字号 */
+  .formula-demo__input {
+    font-size: 2rem;
+  }
+
+  /* 手机端：演示计算器计算结果字号 */
+  .formula-demo__output {
+    font-size: 4.5rem;
+  }
+
+  .formula-demo__functions span {
+    min-height: 40px;
+  }
+
+  .formula-demo__keys {
+    gap: 5px;
+    padding: 7px 8px 9px;
+  }
+
+  /* 手机端：演示计算器按键尺寸与文字 */
+  .formula-demo__keys span {
+    min-height: 44px;
+    border-radius: 10px;
+    font-size: .68rem;
+  }
+}
