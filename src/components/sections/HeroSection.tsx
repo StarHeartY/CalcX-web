@@ -72,7 +72,6 @@ export default function HeroSection() {
           <div className="hero-visual__orbit hero-visual__orbit--one" aria-hidden="true" />
           <div className="hero-visual__orbit hero-visual__orbit--two" aria-hidden="true" />
           <div className="hero-product-frame" data-speed="0.94">
-            <div className="hero-product-frame__bar"><span /><span>CalculatorX / Scientific</span><span>RAD</span></div>
             <div className="hero-phone">
               <img className="theme-image theme-image--light" src="/images/product/scientific.png" alt={hero.visualAlt} />
               <img className="theme-image theme-image--dark" src="/images/product/scientific-dark.png" alt={hero.visualAlt} />
