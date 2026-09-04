@@ -33,8 +33,7 @@
 /* 产品展示区主标题 */
 .showcase-heading h2 {
   font-size: clamp(2.7rem, 5.2vw, 5.5rem);
-  line-height: .92;
-  letter-spacing: -.065em;
+  line-height: 1;
 }
 /* 产品展示区主标题旁的介绍文字 */
 .showcase-heading>div>p {
