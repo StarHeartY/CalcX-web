@@ -106,11 +106,13 @@ ul {
   transform: translateY(0);
 }
 
+/* 全站内容最大宽度与左右页边距 */
 .shell {
   width: min(calc(100% - 64px), var(--shell));
   margin-inline: auto;
 }
 
+/* 全站区块眉题文字，例如“为 HarmonyOS NEXT 而生”“一个数学工作区” */
 .eyebrow {
   display: flex;
   align-items: center;
@@ -132,6 +134,7 @@ ul {
   box-shadow: 0 0 0 5px color-mix(in srgb, var(--orange) 17%, transparent);
 }
 
+/* 全站普通按钮：文字大小、按钮高度和左右留白 */
 .button {
   display: inline-flex;
   min-height: 60px;
@@ -181,12 +184,14 @@ ul {
   fill: currentColor;
 }
 
+/* 小号按钮，例如顶栏右侧“获取”按钮 */
 .button--small {
   min-height: 40px;
   padding: 0 18px;
   font-size: .78rem;
 }
 
+/* 大号按钮：按钮高度和左右留白 */
 .button--large {
   min-height: 66px;
   padding: 0 28px;
@@ -222,6 +227,7 @@ ul {
 }
 
 /* Header */
+/* 顶栏默认高度：上下 padding 与内部最小高度共同决定总高度 */
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -231,6 +237,7 @@ ul {
   transition: padding 220ms ease, background 220ms ease, border-color 220ms ease;
 }
 
+/* 页面滚动后的顶栏高度 */
 .site-header.is-scrolled {
   padding: 10px 0;
   background: color-mix(in srgb, var(--bg) 78%, transparent);
@@ -238,6 +245,7 @@ ul {
   backdrop-filter: blur(22px) saturate(140%);
 }
 
+/* 顶栏内部最小高度 */
 .site-header__inner {
   display: flex;
   min-height: 46px;
@@ -255,6 +263,7 @@ ul {
   transform-origin: left center;
 }
 
+/* 顶栏 CalculatorX 品牌文字 */
 .brand {
   position: relative;
   z-index: 2;
@@ -287,6 +296,7 @@ ul {
   gap: 30px;
 }
 
+/* 顶栏“能力”“体验”“技术”等导航文字 */
 .primary-nav a {
   position: relative;
   color: var(--ink-soft);
@@ -323,6 +333,7 @@ ul {
   margin-left: auto;
 }
 
+/* 顶栏右侧语言与主题圆形按钮尺寸 */
 .language-button,
 .icon-button {
   display: grid;
@@ -337,12 +348,14 @@ ul {
   cursor: pointer;
 }
 
+/* 顶栏语言切换按钮文字 */
 .language-button {
   font-family: var(--font-mono);
   font-size: .7rem;
   font-weight: 760;
 }
 
+/* 顶栏主题切换按钮图标 */
 .icon-button svg {
   width: 17px;
   height: 17px;
@@ -391,6 +404,7 @@ ul {
   opacity: .75;
 }
 
+/* 首页背景装饰公式 */
 .hero-equations {
   position: absolute;
   inset: 22% 0 auto;
@@ -423,6 +437,7 @@ ul {
   margin-bottom: 24px;
 }
 
+/* 首页主标题“不只计算答案，更理解数学” */
 .hero h1 {
   font-size: clamp(3rem, 5.6vw, 6.0rem);
   line-height: 1;
@@ -442,6 +457,7 @@ ul {
   color: var(--blue);
 }
 
+/* 首页主标题下方介绍文字 */
 .hero__description {
   max-width: 610px;
   margin-top: 30px;
@@ -457,6 +473,7 @@ ul {
   margin-top: 32px;
 }
 
+/* 首页产品截图与装饰元素所在区域的高度 */
 .hero-visual {
   position: relative;
   height: min(70vh, 720px);
@@ -517,6 +534,7 @@ ul {
   display: none;
 }
 
+/* 首页第一张产品截图：显示宽度与原图宽高比 */
 .hero-product-frame {
   position: absolute;
   top: 50%;
@@ -556,6 +574,7 @@ ul {
   display: block;
 }
 
+/* 首页产品截图旁悬浮卡片的内边距与外观 */
 .hero-float {
   position: absolute;
   z-index: 5;
@@ -566,6 +585,7 @@ ul {
   backdrop-filter: blur(22px);
 }
 
+/* 首页截图旁悬浮卡片的小标签 */
 .hero-float span {
   display: block;
   color: var(--ink-faint);
@@ -581,6 +601,7 @@ ul {
   border-radius: 4px 22px 22px 22px;
 }
 
+/* 首页截图旁悬浮卡片的计算结果 */
 .hero-float--result strong {
   display: block;
   margin-top: 9px;
@@ -625,6 +646,7 @@ ul {
   border-right: 1px solid var(--line);
 }
 
+/* 首页底部产品数据左侧 01、02 等序号 */
 .hero-proof__item>span {
   grid-row: span 2;
   color: var(--ink-faint);
@@ -632,16 +654,19 @@ ul {
   font-size: .8rem;
 }
 
+/* 首页底部产品数据，例如“1.6.2”“5 类” */
 .hero-proof__item strong {
   font-size: 1.3rem;
   letter-spacing: -.04em;
 }
 
+/* 首页底部产品数据说明，例如“当前版本”“函数图像” */
 .hero-proof__item small {
   color: var(--ink-soft);
   font-size: 1rem;
 }
 
+/* 首页右侧滚动提示文字 */
 .hero-scroll {
   position: absolute;
   right: 18px;
@@ -697,12 +722,14 @@ ul {
   color: #7fa2ff;
 }
 
+/* 能力区主标题“从日常运算，到真正的进阶数学” */
 .capabilities__intro h2 {
   max-width: 900px;
   font-size: clamp(3.6rem, 6.2vw, 5.5rem);
   line-height: 1;
 }
 
+/* 能力区主标题旁的介绍文字 */
 .capabilities__intro>p:not(.eyebrow) {
   max-width: 530px;
   padding-bottom: 9px;
@@ -711,6 +738,7 @@ ul {
   line-height: 1.8;
 }
 
+/* 能力区右上角“06 / CORE SYSTEMS”编号 */
 .capabilities__count {
   position: absolute;
   right: 0;
@@ -737,6 +765,7 @@ ul {
   white-space: nowrap;
 }
 
+/* 能力区横向滚动的大号描边文字 */
 .capabilities-marquee span {
   display: block;
   color: transparent;
@@ -767,12 +796,14 @@ ul {
   border-bottom: 1px solid rgba(255, 255, 255, .18);
 }
 
+/* 能力卡片左上角编号 */
 .capability-index {
   color: rgba(255, 255, 255, .38);
   font-family: var(--font-mono);
   font-size: .68rem;
 }
 
+/* 能力卡片圆形数学图标及图标文字 */
 .capability-icon {
   display: grid;
   width: 76px;
@@ -804,6 +835,7 @@ ul {
   background: #72dcb3;
 }
 
+/* 能力卡片标题 */
 .capability-card h3 {
   margin-top: auto;
   font-size: clamp(1.35rem, 2.1vw, 2rem);
@@ -811,6 +843,7 @@ ul {
   letter-spacing: -.045em;
 }
 
+/* 能力卡片说明文字 */
 .capability-card p {
   max-width: 34ch;
   margin-top: 15px;
@@ -885,12 +918,14 @@ ul {
   align-items: end;
 }
 
+/* 产品展示区主标题 */
 .showcase-heading h2 {
   font-size: clamp(2.7rem, 5.2vw, 5.5rem);
   line-height: .92;
   letter-spacing: -.065em;
 }
 
+/* 产品展示区主标题旁的介绍文字 */
 .showcase-heading>div>p {
   max-width: 430px;
   padding-bottom: 5px;
@@ -899,6 +934,7 @@ ul {
   line-height: 1.7;
 }
 
+/* 产品展示区滚动进度与场景编号 */
 .showcase-index {
   position: relative;
   z-index: 7;
@@ -968,10 +1004,12 @@ ul {
   font-size: .68rem;
 }
 
+/* 产品展示场景眉题文字，字号继承全站 .eyebrow */
 .showcase-scene__copy .eyebrow {
   margin-bottom: 18px;
 }
 
+/* 产品展示场景大标题 */
 .showcase-scene__copy h3 {
   max-width: 10ch;
   font-size: clamp(3rem, 5.4vw, 5.9rem);
@@ -979,6 +1017,7 @@ ul {
   letter-spacing: -.07em;
 }
 
+/* 产品展示场景介绍文字 */
 .showcase-scene__copy>p:not(.eyebrow) {
   max-width: 500px;
   margin-top: 24px;
@@ -993,6 +1032,7 @@ ul {
   margin-top: 28px;
 }
 
+/* 产品展示场景功能要点列表 */
 .showcase-scene__copy li {
   display: flex;
   align-items: center;
@@ -1081,12 +1121,14 @@ ul {
   stroke-width: 5;
 }
 
+/* 产品截图缺失时显示的备用公式 */
 .fallback-formula {
   position: relative;
   font-family: var(--font-math);
   font-size: clamp(2.4rem, 5vw, 5rem);
 }
 
+/* 备用产品画面底部说明文字 */
 .fallback-caption {
   position: absolute;
   right: 26px;
@@ -1098,6 +1140,7 @@ ul {
   font-size: .7rem;
 }
 
+/* 产品展示场景右下角序号标签 */
 .showcase-scene__label {
   position: absolute;
   right: 3%;
@@ -1113,6 +1156,7 @@ ul {
   backdrop-filter: blur(18px);
 }
 
+/* 产品展示区右下角滚动提示 */
 .showcase-corner {
   position: absolute;
   right: 18px;
@@ -1146,6 +1190,7 @@ ul {
   background-size: auto, 46px 46px, 46px 46px;
 }
 
+/* 原生体验区背景超大装饰文字 */
 .experience__watermark {
   position: absolute;
   right: -1vw;
@@ -1179,6 +1224,7 @@ ul {
   box-shadow: 0 0 0 5px rgba(17, 18, 22, .12);
 }
 
+/* 原生体验区主标题 */
 .experience__title h2 {
   max-width: 10ch;
   font-size: clamp(3.4rem, 6.4vw, 6.8rem);
@@ -1186,6 +1232,7 @@ ul {
   letter-spacing: -.075em;
 }
 
+/* 原生体验区主标题下方介绍文字 */
 .experience__title>p:not(.eyebrow) {
   max-width: 590px;
   margin-top: 27px;
@@ -1208,17 +1255,20 @@ ul {
   border-bottom: 1px solid rgba(17, 18, 22, .28);
 }
 
+/* 原生体验功能列表左侧编号 */
 .experience-list article>span {
   padding-top: 3px;
   font-family: var(--font-mono);
   font-size: .62rem;
 }
 
+/* 原生体验功能列表标题 */
 .experience-list h3 {
   font-size: 1rem;
   letter-spacing: -.025em;
 }
 
+/* 原生体验功能列表说明文字 */
 .experience-list p {
   max-width: 540px;
   margin-top: 5px;
@@ -1239,6 +1289,7 @@ ul {
   transform-style: preserve-3d;
 }
 
+/* 演示计算器顶部状态栏文字 */
 .formula-demo__top {
   display: flex;
   height: 58px;
@@ -1285,6 +1336,7 @@ ul {
   letter-spacing: .1em;
 }
 
+/* 演示计算器输入公式 */
 .formula-demo__input {
   font-family: var(--font-math);
   font-size: clamp(2.2rem, 4.2vw, 4.6rem);
@@ -1298,6 +1350,7 @@ ul {
   background: #111216;
 }
 
+/* 演示计算器主要计算结果 */
 .formula-demo__output {
   display: flex;
   align-items: baseline;
@@ -1309,6 +1362,7 @@ ul {
   line-height: .8;
 }
 
+/* 演示计算器结果后的辅助文字 */
 .formula-demo__output span {
   color: #111216;
   font-size: .32em;
@@ -1321,6 +1375,7 @@ ul {
   padding: 10px 12px 0;
 }
 
+/* 演示计算器功能键与数字键尺寸及文字 */
 .formula-demo__functions span,
 .formula-demo__keys span {
   display: grid;
@@ -1401,6 +1456,7 @@ ul {
   align-items: end;
 }
 
+/* 技术区主标题 */
 .technology__intro h2 {
   max-width: 13ch;
   font-size: clamp(2.8rem, 5.2vw, 5.4rem);
@@ -1408,6 +1464,7 @@ ul {
   letter-spacing: -.068em;
 }
 
+/* 技术区主标题旁的介绍文字 */
 .technology__intro>div>p {
   padding-bottom: 5px;
   color: rgba(255, 255, 255, .52);
@@ -1446,6 +1503,7 @@ ul {
   backdrop-filter: blur(16px);
 }
 
+/* 技术流程卡片顶部编号与类型 */
 .pipeline__step-top {
   display: flex;
   align-items: center;
@@ -1456,6 +1514,7 @@ ul {
   letter-spacing: .08em;
 }
 
+/* 技术流程卡片圆形符号 */
 .pipeline__symbol {
   display: grid;
   width: 110px;
@@ -1485,6 +1544,7 @@ ul {
   background: #72dcb3;
 }
 
+/* 技术流程卡片标题 */
 .pipeline__step strong {
   margin-top: auto;
   font-size: clamp(2rem, 3vw, 3.2rem);
@@ -1492,12 +1552,14 @@ ul {
   letter-spacing: -.06em;
 }
 
+/* 技术流程卡片说明文字 */
 .pipeline__step>p {
   margin-top: 10px;
   color: rgba(255, 255, 255, .5);
   font-size: .78rem;
 }
 
+/* 技术流程卡片底部技术标签 */
 .pipeline__step-bottom {
   display: flex;
   align-items: center;
@@ -1529,6 +1591,7 @@ ul {
   gap: 8px;
 }
 
+/* 技术区底部补充标签 */
 .technology__notes span {
   padding: 8px 12px;
   color: rgba(255, 255, 255, .48);
@@ -1583,6 +1646,7 @@ ul {
   transform: rotate(-45deg);
 }
 
+/* 开源区左侧“GPL”大字 */
 .open-source__mark strong {
   position: relative;
   z-index: 3;
@@ -1608,6 +1672,7 @@ ul {
   border-radius: 50%;
 }
 
+/* 开源区左侧圆环文字 */
 .open-source__ring span {
   position: absolute;
   top: 48%;
@@ -1631,6 +1696,7 @@ ul {
   color: rgba(255, 255, 255, .66);
 }
 
+/* 开源区主标题 */
 .open-source__copy h2 {
   max-width: 10ch;
   margin-top: 25px;
@@ -1639,6 +1705,7 @@ ul {
   letter-spacing: -.073em;
 }
 
+/* 开源区介绍文字 */
 .open-source__copy>p:not(.eyebrow) {
   max-width: 600px;
   margin-top: 27px;
@@ -1654,6 +1721,7 @@ ul {
   margin-top: 29px;
 }
 
+/* 开源区 GPLv3、ArkTS 等技术标签 */
 .badge-row span {
   padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, .27);
@@ -1712,6 +1780,7 @@ ul {
   inset: 28%;
 }
 
+/* 下载区圆环上的数学符号 */
 .download__orbit span {
   position: absolute;
   display: grid;
@@ -1762,6 +1831,7 @@ ul {
   box-shadow: 0 0 0 5px rgba(17, 18, 22, .12);
 }
 
+/* 下载区主标题 */
 .download h2 {
   margin: 29px auto 0;
   font-size: clamp(4rem, 9vw, 9.5rem);
@@ -1769,6 +1839,7 @@ ul {
   letter-spacing: -.085em;
 }
 
+/* 下载区主标题下方介绍文字 */
 .download__description {
   max-width: 630px;
   margin: 32px auto 0;
@@ -1814,15 +1885,18 @@ ul {
   align-items: flex-start;
 }
 
+/* AppGallery 商店按钮上方小字 */
 .store-button small {
   font-size: .48rem;
   letter-spacing: .08em;
 }
 
+/* AppGallery 商店按钮主文字 */
 .store-button strong {
   font-size: .91rem;
 }
 
+/* 下载按钮下方说明文字 */
 .download__footnote {
   margin-top: 21px;
   color: rgba(17, 18, 22, .55);
@@ -1830,6 +1904,7 @@ ul {
   font-size: .56rem;
 }
 
+/* 下载区底部版本信息 */
 .download__version {
   display: block;
   margin-top: 58px;
@@ -1858,6 +1933,7 @@ ul {
   color: white;
 }
 
+/* 页脚品牌下方介绍文字 */
 .site-footer__grid>div>p {
   max-width: 360px;
   margin-top: 18px;
@@ -1872,6 +1948,7 @@ ul {
   align-content: start;
 }
 
+/* 页脚链接文字 */
 .footer-links a {
   color: rgba(255, 255, 255, .58);
   font-size: .8rem;
@@ -1881,6 +1958,7 @@ ul {
   color: white;
 }
 
+/* 页脚最底部版权与系统信息 */
 .site-footer__bottom {
   display: flex;
   justify-content: space-between;
@@ -1897,6 +1975,7 @@ ul {
     gap: 30px;
   }
 
+  /* 中等桌面：首页主标题字号 */
   .hero h1 {
     font-size: clamp(3rem, 7vw, 5.3rem);
   }
@@ -1923,10 +2002,12 @@ ul {
     width: min(calc(100% - 36px), var(--shell));
   }
 
+  /* 平板端与手机端：顶栏上下留白 */
   .site-header {
     padding: 12px 0;
   }
 
+  /* 平板端与手机端：顶栏内部高度 */
   .site-header__inner {
     min-height: 42px;
   }
@@ -1961,6 +2042,7 @@ ul {
     gap: 0;
   }
 
+  /* 平板端与手机端：展开菜单中的导航文字 */
   .primary-nav a {
     padding: 15px 0;
     border-bottom: 1px solid var(--line);
@@ -1977,6 +2059,7 @@ ul {
     margin-left: auto;
   }
 
+  /* 平板端与手机端：汉堡菜单圆形按钮尺寸 */
   .menu-button {
     position: relative;
     z-index: 2;
@@ -2027,6 +2110,7 @@ ul {
     width: 150vw;
   }
 
+  /* 平板端与手机端：首页背景装饰公式字号 */
   .hero-equations {
     top: 48%;
     font-size: 1.1rem;
@@ -2041,6 +2125,7 @@ ul {
     max-width: 760px;
   }
 
+  /* 平板端与手机端：首页主标题字号 */
   .hero h1 {
     font-size: clamp(2.8rem, 9vw, 4.8rem);
   }
@@ -2049,6 +2134,7 @@ ul {
     max-width: 640px;
   }
 
+  /* 平板端与手机端：首页产品图片区高度 */
   .hero-visual {
     width: 100%;
     height: 700px;
@@ -2057,6 +2143,7 @@ ul {
     transform: none;
   }
 
+  /* 平板端与手机端：首页第一张产品截图宽度 */
   .hero-product-frame {
     width: 350px;
     min-width: 0;
@@ -2102,6 +2189,7 @@ ul {
     gap: 30px;
   }
 
+  /* 平板端与手机端：能力区主标题字号 */
   .capabilities__intro h2 {
     font-size: clamp(3.1rem, 8.5vw, 4.8rem);
   }
@@ -2140,6 +2228,7 @@ ul {
     padding-block: 100px;
   }
 
+  /* 平板端与手机端：原生体验区主标题字号 */
   .experience__title h2 {
     font-size: clamp(3.5rem, 11vw, 6.4rem);
   }
@@ -2150,6 +2239,7 @@ ul {
     transform: rotateZ(1deg);
   }
 
+  /* 平板端与手机端：原生体验区背景装饰文字 */
   .experience__watermark {
     bottom: 3%;
     font-size: 24vw;
@@ -2175,6 +2265,7 @@ ul {
     padding: 58px 36px 70px;
   }
 
+  /* 平板端与手机端：开源区主标题字号 */
   .open-source__copy h2 {
     font-size: clamp(3.4rem, 10vw, 6rem);
   }
@@ -2183,6 +2274,7 @@ ul {
     width: 120vw;
   }
 
+  /* 平板端与手机端：下载区主标题字号 */
   .download h2 {
     font-size: clamp(4rem, 13vw, 7.4rem);
   }
@@ -2232,6 +2324,7 @@ ul {
     border-top: 1px solid var(--line);
   }
 
+  /* 平板端、手机端或减少动态效果时：产品展示场景标题字号 */
   .showcase-scene__copy h3 {
     font-size: clamp(3rem, 8vw, 5rem);
   }
@@ -2299,11 +2392,13 @@ ul {
 }
 
 @media (max-width: 700px) {
+  /* 手机端：首页主标题字号 */
   .hero h1 {
     font-size: clamp(2.5rem, 11vw, 4rem);
     line-height: 1;
   }
 
+  /* 手机端：首页介绍文字字号 */
   .hero__description {
     font-size: .93rem;
   }
@@ -2317,12 +2412,14 @@ ul {
     width: 100%;
   }
 
+  /* 手机端：首页产品图片区高度和宽度 */
   .hero-visual {
     height: 590px;
     margin-inline: -5%;
     width: 110%;
   }
 
+  /* 手机端：首页第一张产品截图宽度 */
   .hero-product-frame {
     width: 282px;
   }
@@ -2352,6 +2449,7 @@ ul {
     bottom: 10%;
   }
 
+  /* 手机端：首页悬浮卡片计算结果字号 */
   .hero-float--result strong {
     font-size: 1.15rem;
   }
@@ -2364,10 +2462,12 @@ ul {
     padding: 110px 0;
   }
 
+  /* 手机端：能力区主标题字号 */
   .capabilities__intro h2 {
     font-size: clamp(2.6rem, 10vw, 3.4rem);
   }
 
+  /* 手机端：能力区滚动描边文字字号 */
   .capabilities-marquee span {
     font-size: 4rem;
   }
@@ -2381,12 +2481,14 @@ ul {
     padding: 25px;
   }
 
+  /* 手机端：能力卡片圆形图标尺寸 */
   .capability-icon {
     width: 66px;
     height: 66px;
     margin-top: 35px;
   }
 
+  /* 手机端：产品展示区主标题字号 */
   .showcase-heading h2 {
     font-size: 3.3rem;
   }
@@ -2406,6 +2508,7 @@ ul {
     padding: 0;
   }
 
+  /* 手机端：产品展示场景标题字号 */
   .showcase-scene__copy h3 {
     font-size: 3.45rem;
   }
@@ -2431,6 +2534,7 @@ ul {
     padding-block: 90px;
   }
 
+  /* 手机端：原生体验区主标题字号 */
   .experience__title h2 {
     font-size: 3.65rem;
   }
@@ -2453,10 +2557,12 @@ ul {
     padding: 42px 26px 28px;
   }
 
+  /* 手机端：演示计算器输入公式字号 */
   .formula-demo__input {
     font-size: 2rem;
   }
 
+  /* 手机端：演示计算器计算结果字号 */
   .formula-demo__output {
     font-size: 4.5rem;
   }
@@ -2470,12 +2576,14 @@ ul {
     padding: 7px 8px 9px;
   }
 
+  /* 手机端：演示计算器按键尺寸与文字 */
   .formula-demo__keys span {
     min-height: 44px;
     border-radius: 10px;
     font-size: .68rem;
   }
 
+  /* 手机端：技术区主标题字号 */
   .technology__intro h2 {
     font-size: 3.25rem;
   }
@@ -2488,6 +2596,7 @@ ul {
     height: 380px;
   }
 
+  /* 手机端：技术流程卡片圆形符号尺寸 */
   .pipeline__symbol {
     width: 88px;
     height: 88px;
@@ -2507,6 +2616,7 @@ ul {
     min-height: 300px;
   }
 
+  /* 手机端：开源区左侧“GPL”大字 */
   .open-source__mark strong {
     font-size: 4.6rem;
   }
@@ -2519,6 +2629,7 @@ ul {
     padding: 46px 24px 55px;
   }
 
+  /* 手机端：开源区主标题字号 */
   .open-source__copy h2 {
     font-size: 3.7rem;
   }
@@ -2532,6 +2643,7 @@ ul {
     padding-block: 100px;
   }
 
+  /* 手机端：下载区主标题字号 */
   .download h2 {
     font-size: 4.4rem;
   }
@@ -2550,6 +2662,7 @@ ul {
     width: 180vw;
   }
 
+  /* 手机端：下载区圆环数学符号尺寸 */
   .download__orbit span {
     width: 40px;
     height: 40px;
