@@ -9,38 +9,25 @@ export default function ExperienceSection() {
   useGSAP(() => {
     const media = gsap.matchMedia()
 
-    media.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
+    media.add('(prefers-reduced-motion: no-preference)', () => {
       const timeline = gsap.timeline({
+        defaults: { ease: 'power3.out' },
         scrollTrigger: {
           trigger: root.current,
-          start: 'top top',
-          end: '+=1800',
-          pin: true,
-          scrub: 0.8,
-          anticipatePin: 1,
+          start: 'top 72%',
+          once: true,
         },
       })
 
       timeline
-        .from('.experience__title', { y: 70, autoAlpha: 0, duration: 0.5 })
-        .from('.formula-demo', { rotateY: -16, rotateZ: 5, scale: 0.84, autoAlpha: 0, duration: 0.7 }, '<')
-        .from('.formula-demo__input', { y: 30, autoAlpha: 0, duration: 0.4 })
-        .from('.formula-demo__line', { scaleX: 0, transformOrigin: 'left', duration: 0.35 })
-        .from('.formula-demo__output', { y: 35, scale: 0.7, autoAlpha: 0, duration: 0.45 })
-        .from('.formula-demo__keys span', { y: 30, autoAlpha: 0, stagger: 0.06, duration: 0.25 }, '<')
-        .from('.experience-list article', { x: -35, autoAlpha: 0, duration: 0.4, stagger: 0.35 })
-        .to('.formula-demo', { rotateZ: -2, y: -20, duration: 0.6 }, '<')
-        .to({}, { duration: 0.35 })
-    })
-
-    media.add('(max-width: 900px) and (prefers-reduced-motion: no-preference)', () => {
-      gsap.from('.formula-demo', {
-        y: 60,
-        rotateZ: 5,
-        autoAlpha: 0,
-        duration: 1,
-        scrollTrigger: { trigger: '.formula-demo', start: 'top 80%', once: true },
-      })
+        .from('.experience__title', { y: 60, autoAlpha: 0, duration: 0.6 })
+        .from('.formula-demo', { rotateY: -14, rotateZ: 5, scale: 0.86, autoAlpha: 0, duration: 0.8 }, '-=0.28')
+        .from('.formula-demo__input', { y: 30, autoAlpha: 0, duration: 0.4 }, '-=0.2')
+        .from('.formula-demo__line', { scaleX: 0, transformOrigin: 'left', duration: 0.35 }, '-=0.08')
+        .from('.formula-demo__output', { y: 35, scale: 0.7, autoAlpha: 0, duration: 0.45 }, '-=0.08')
+        .from('.formula-demo__keys span', { y: 30, autoAlpha: 0, stagger: 0.05, duration: 0.22 }, '-=0.22')
+        .from('.experience-list article', { x: -35, autoAlpha: 0, duration: 0.42, stagger: 0.22 }, '-=0.38')
+        .to('.formula-demo', { rotateZ: -2, y: -20, duration: 0.6, ease: 'power2.out' }, '-=0.18')
     })
 
     return () => media.revert()
