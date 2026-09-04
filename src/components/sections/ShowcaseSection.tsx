@@ -43,11 +43,6 @@ export default function ShowcaseSection() {
           scrub: 1,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          snap: {
-            snapTo: 1 / (showcase.items.length - 1),
-            duration: { min: 0.18, max: 0.42 },
-            delay: 0.12,
-          },
           onUpdate: (self) => {
             const nextIndex = Math.round(self.progress * (cards.length - 1))
 

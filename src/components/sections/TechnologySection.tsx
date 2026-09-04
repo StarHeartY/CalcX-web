@@ -23,7 +23,6 @@ export default function TechnologySection() {
           scrub: 1,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          snap: { snapTo: 1 / (architecture.steps.length - 1), duration: { min: 0.15, max: 0.4 }, delay: 0.15 },
         },
       })
     })
