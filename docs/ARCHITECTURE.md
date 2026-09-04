@@ -72,7 +72,7 @@ src/
 | `Header` | 品牌、锚点导航、语言切换、主题切换与移动菜单 |
 | `HeroSection` | 产品定位、下载入口、源码入口和关键数字 |
 | `CapabilitiesSection` | 六组核心能力概览 |
-| `ShowcaseSection` | 桌面固定滚动、移动顺序排列的四组产品场景 |
+| `ShowcaseSection` | 桌面固定滚动切换标签式产品面板，移动端通过标签点击切换 |
 | `ExperienceSection` | 以自动播放的公式求解场景说明触屏输入、原生交互与本地优先 |
 | `TechnologySection` | 横向滚动展示 CalculatorX 应用本体的技术链路 |
 | `OpenSourceSection` | 开源定位与外部链接 |
