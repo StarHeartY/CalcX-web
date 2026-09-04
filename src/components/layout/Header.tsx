@@ -57,7 +57,7 @@ export default function Header() {
     <header ref={header} className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="site-header__inner shell">
         <a className="brand" href={locale === 'en' ? '/en/' : '/'} aria-label="CalculatorX home">
-          <img src="/images/app-icon.png" alt="" width="34" height="34" />
+          <img src="/images/app-icon.webp" alt="" width="34" height="34" />
           <span>Calculator<span>X</span></span>
         </a>
 

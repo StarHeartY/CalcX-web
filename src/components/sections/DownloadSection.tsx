@@ -34,7 +34,7 @@ export default function DownloadSection() {
         <p className="download__description">{download.description}</p>
         <div className="download__actions">
           <a className="store-button" href={APP_GALLERY_URL} target="_blank" rel="noreferrer">
-            <img src="/images/appgallery-icon.png" alt="" width="46" height="46" />
+            <img src="/images/appgallery-icon.webp" alt="" width="46" height="46" />
             <span><small>EXPLORE IT ON</small><strong>{download.appGallery}</strong></span>
           </a>
           <a className="button button--dark button--large" href={RELEASES_URL} target="_blank" rel="noreferrer">

@@ -2,6 +2,15 @@ import { useRef } from 'react'
 import { gsap, useGSAP } from '../../animations/gsap'
 import { useContent } from '../../i18n/LocaleContext'
 
+const capabilityLinks = [
+  '/docs/scientific/overview',
+  '/docs/equations/overview',
+  '/docs/matrix/overview',
+  '/docs/graphing/overview',
+  '/docs/exchange/overview',
+  '/docs/history',
+] as const
+
 export default function CapabilitiesSection() {
   const root = useRef<HTMLElement>(null)
   const { capabilities } = useContent()
@@ -54,13 +63,16 @@ export default function CapabilitiesSection() {
       <div className="shell">
         <div className="capability-grid">
           {capabilities.items.map((item, index) => (
-            <article className={`capability-card accent-${item.accent}`} key={item.title}>
+            <a className={`capability-card accent-${item.accent}`} href={capabilityLinks[index]} key={item.title}>
               <span className="capability-index">0{index + 1}</span>
               <span className="capability-icon" aria-hidden="true">{item.icon}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <span className="capability-card__line" aria-hidden="true" />
-            </article>
+              <svg className="capability-card__line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path strokeDasharray="207 207" strokeDashoffset="207" d="M 8 100 Q 0 100 0 92 V 8 Q 0 0 8 0 H 92 Q 100 0 100 8" />
+                <path strokeDasharray="181 181" strokeDashoffset="181" d="M 8 100 H 92 Q 100 100 100 92 V 8" />
+              </svg>
+            </a>
           ))}
         </div>
       </div>

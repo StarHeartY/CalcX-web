@@ -57,7 +57,7 @@ const en: SiteContent = {
         id: 'exact', tab: 'Exact results', eyebrow: 'Exact or approximate — you choose', title: 'An answer can be more than a decimal',
         description: 'CalculatorX preserves fractions, radicals, π, and symbolic expressions whenever possible. S⇄D gives you an approximation when you want one.',
         points: ['Symbolic results and high-precision decimals', 'Fractions, mixed numbers, and DMS', 'Textbook-quality LaTeX typesetting'],
-        lightSrc: '/images/product/exact.png', darkSrc: '/images/product/exact-dark.png',
+        lightSrc: '/images/product/exact.webp', darkSrc: '/images/product/exact-dark.webp',
         alt: 'CalculatorX displaying one third as an exact fraction', fallbackFormula: '√8 = 2√2', fallbackLabel: 'Exact calculation screen',
       },
       {

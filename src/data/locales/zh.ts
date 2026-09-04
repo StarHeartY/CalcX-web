@@ -57,7 +57,7 @@ const zh: SiteContent = {
         id: 'exact', tab: '精确计算', eyebrow: '精确与近似，自由切换', title: '答案不止是一个小数',
         description: 'CalculatorX 会尽可能保留分数、根式、π 和符号表达式。需要近似值时，再通过 S⇄D 快速切换。',
         points: ['符号结果与高精度小数', '分数、带分数与度分秒', '教科书级 LaTeX 排版'],
-        lightSrc: '/images/product/exact.png', darkSrc: '/images/product/exact-dark.png',
+        lightSrc: '/images/product/exact.webp', darkSrc: '/images/product/exact-dark.webp',
         alt: 'CalculatorX 将一除以三显示为精确分数', fallbackFormula: '√8 = 2√2', fallbackLabel: '精确计算界面',
       },
       {

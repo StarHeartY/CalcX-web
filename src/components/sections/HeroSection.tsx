@@ -74,8 +74,8 @@ export default function HeroSection() {
           <div className="hero-product-anchor">
             <div className="hero-product-frame">
               <div className="hero-phone">
-                <img className="theme-image theme-image--light" src="/images/product/scientific.png" alt={hero.visualAlt} />
-                <img className="theme-image theme-image--dark" src="/images/product/scientific-dark.png" alt={hero.visualAlt} />
+                <img className="theme-image theme-image--light" src="/images/product/scientific.webp" alt={hero.visualAlt} />
+                <img className="theme-image theme-image--dark" src="/images/product/scientific-dark.webp" alt={hero.visualAlt} />
               </div>
             </div>
           </div>
