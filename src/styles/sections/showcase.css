@@ -7,7 +7,7 @@
   min-height: 760px;
   flex-direction: column;
   overflow: hidden;
-  background: #f1efe8;
+  background: #fff8df;
 }
 
 :root[data-theme="dark"] .showcase {
@@ -21,7 +21,7 @@
   padding-top: clamp(68px, 8vh, 94px);
 }
 
-/* 产品展示区顶部标题，字号沿用现有设置 */
+/* 产品展示区顶部标题 */
 .showcase-heading {
   max-width: 1080px;
   margin-bottom: clamp(20px, 2.5vh, 30px);
@@ -66,7 +66,7 @@
   display: none;
 }
 
-/* 标签文字保持原有字号与字体 */
+/* 标签文字 */
 .showcase-tabs button {
   flex: 0 0 auto;
   min-height: 42px;
@@ -77,7 +77,7 @@
   border-radius: 999px;
   cursor: pointer;
   font-family: var(--font-sans);
-  font-size: .833rem;
+  font-size: .95rem;
   font-weight: 680;
   transition: color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
 }
@@ -151,14 +151,14 @@
   margin-bottom: 18px;
 }
 
-/* 产品展示场景大标题，字号保持不变 */
+/* 产品展示场景大标题 */
 .showcase-card__copy h3 {
   max-width: 10ch;
-  font-size: clamp(3rem, 6.4vw, 4.2rem);
+  font-size: clamp(3rem, 3.4vw, 3.8rem);
   line-height: 1;
 }
 
-/* 产品展示场景介绍文字，字号保持不变 */
+/* 产品展示场景介绍文字 */
 .showcase-card__copy>p:not(.eyebrow) {
   max-width: 500px;
   margin-top: 24px;
@@ -173,7 +173,7 @@
   margin-top: 28px;
 }
 
-/* 产品展示场景功能要点，字号保持不变 */
+/* 产品展示场景功能要点 */
 .showcase-card__copy li {
   display: flex;
   align-items: center;
@@ -336,6 +336,13 @@
 
   .showcase .product-visual__picture {
     height: 480px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* 窄屏纵向卡片列表不显示标签栏 */
+  .showcase-tabs {
+    display: none;
   }
 }
 

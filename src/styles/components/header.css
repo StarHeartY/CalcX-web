@@ -38,7 +38,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 840;
   letter-spacing: -.04em;
 }
@@ -107,7 +107,7 @@
 }
 /* 顶栏语言切换按钮文字 */
 .language-button {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: .9rem;
   font-weight: 760;
 }

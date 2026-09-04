@@ -121,7 +121,7 @@ const en: SiteContent = {
     eyebrow: 'Get started',
     title: 'Bring your next problem to CalculatorX',
     description: 'AppGallery is recommended for installation and updates. Development and historical builds are available from GitHub Releases.',
-    appGallery: 'Get on AppGallery',
+    appGallery: 'AppGallery',
     github: 'GitHub Releases',
     footnote: 'Built for HarmonyOS NEXT · Free core features · No feature paywall',
   },

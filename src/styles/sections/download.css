@@ -81,16 +81,15 @@
 /* 下载区主标题 */
 .download h2 {
   margin: 29px auto 0;
-  font-size: clamp(4rem, 9vw, 9.5rem);
-  line-height: .82;
-  letter-spacing: -.085em;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 1;
 }
 /* 下载区主标题下方介绍文字 */
 .download__description {
   max-width: 630px;
   margin: 32px auto 0;
   color: rgba(17, 18, 22, .66);
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.72;
 }
 .download__actions {
@@ -101,14 +100,14 @@
 }
 .store-button {
   display: inline-flex;
-  min-height: 66px;
+  min-height: 72px;
   align-items: center;
   gap: 12px;
   padding: 9px 22px;
   color: #111216;
   background: white;
   border: 1px solid rgba(17, 18, 22, .15);
-  border-radius: 999px;
+  border-radius: 24px;
   box-shadow: 0 14px 28px rgba(17, 18, 22, .11);
   transition: transform 180ms var(--ease);
 }
@@ -118,7 +117,6 @@
 .store-button img {
   width: 42px;
   height: 42px;
-  border-radius: 10px;
 }
 .store-button span {
   display: flex;
@@ -127,26 +125,26 @@
 }
 /* AppGallery 商店按钮上方小字 */
 .store-button small {
-  font-size: .48rem;
+  font-size: .7rem;
   letter-spacing: .08em;
 }
 /* AppGallery 商店按钮主文字 */
 .store-button strong {
-  font-size: .91rem;
+  font-size: 1.1rem;
 }
 /* 下载按钮下方说明文字 */
 .download__footnote {
   margin-top: 21px;
   color: rgba(17, 18, 22, .55);
-  font-family: var(--font-mono);
-  font-size: .56rem;
+  font-family: var(--font-sans);
+  font-size: .9rem;
 }
 /* 下载区底部版本信息 */
 .download__version {
   display: block;
   margin-top: 58px;
-  font-family: var(--font-mono);
-  font-size: .54rem;
+  font-family: var(--font-sans);
+  font-size: .7rem;
   letter-spacing: .14em;
 }
 @media (max-width: 900px) {

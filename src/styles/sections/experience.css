@@ -111,7 +111,7 @@
   justify-content: space-between;
   padding: 0 22px;
   border-bottom: 1px solid rgba(17, 18, 22, .1);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: .56rem;
   letter-spacing: .06em;
 }
@@ -141,7 +141,7 @@
   top: 18px;
   left: 21px;
   color: rgba(17, 18, 22, .38);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: .52rem;
   letter-spacing: .1em;
 }
@@ -188,7 +188,7 @@
   background: #ebece9;
   border: 1px solid rgba(17, 18, 22, .08);
   border-radius: 13px;
-  font-family: var(--font-math);
+  font-family: var(--font-sans);
   font-size: .84rem;
 }
 .formula-demo__keys {

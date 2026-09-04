@@ -20,7 +20,7 @@
   max-width: 360px;
   margin-top: 18px;
   color: rgba(255, 255, 255, .45);
-  font-size: .8rem;
+  font-size: 1rem;
 }
 .footer-links {
   display: grid;
@@ -31,7 +31,7 @@
 /* 页脚链接文字 */
 .footer-links a {
   color: rgba(255, 255, 255, .58);
-  font-size: .8rem;
+  font-size: 1rem;
 }
 .footer-links a:hover {
   color: white;
@@ -43,8 +43,8 @@
   padding-top: 20px;
   color: rgba(255, 255, 255, .32);
   border-top: 1px solid rgba(255, 255, 255, .12);
-  font-family: var(--font-mono);
-  font-size: .56rem;
+  font-family: var(--font-sans);
+  font-size: .9rem;
 }
 @media (max-width: 700px) {
 

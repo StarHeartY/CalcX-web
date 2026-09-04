@@ -75,7 +75,7 @@ const zh: SiteContent = {
         alt: 'CalculatorX 矩阵运算界面，展示矩阵求逆与乘法结果', fallbackFormula: '[A]⁻¹ · b', fallbackLabel: '矩阵与方程界面',
       },
       {
-        id: 'exchange', tab: '汇率与历史', eyebrow: '数学工作区，也照顾日常', title: '计算、换算与记录连在一起',
+        id: 'exchange', tab: '汇率与历史', eyebrow: '数学工作区，也照顾日常', title: '全局历史记录',
         description: '多币种列表同步换算，最近数据本地缓存；每个数学模块的输入和结果也会被结构化保存。',
         points: ['172 种货币与资产', '整点更新与离线缓存', '跨模块历史检索与回填'],
         lightSrc: '/images/product/exchange-history.webp', darkSrc: '/images/product/exchange-history-dark.webp',
@@ -111,7 +111,7 @@ const zh: SiteContent = {
   },
   openSource: {
     eyebrow: '开源，而不是黑箱',
-    title: '公式可以验证，代码也可以',
+    title: '代码和公式一样可验证',
     description: 'CalculatorX 基于 GPLv3 开源。你可以审查计算链路、提交问题、参与改进，或从 Releases 获取开发版本。',
     primaryAction: '访问 GitHub',
     secondaryAction: '阅读架构文档',
@@ -121,7 +121,7 @@ const zh: SiteContent = {
     eyebrow: '开始使用',
     title: '把下一道题，交给 CalculatorX',
     description: '普通用户推荐通过 AppGallery 安装与更新；开发版本和历史安装包可从 GitHub Releases 获取。',
-    appGallery: 'AppGallery 获取',
+    appGallery: 'AppGallery',
     github: 'GitHub Releases',
     footnote: '面向 HarmonyOS NEXT · 核心功能免费 · 无功能付费墙',
   },
