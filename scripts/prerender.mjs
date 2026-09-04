@@ -24,7 +24,7 @@ const contentTypes = {
   '.js': 'application/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
-  '.png': 'image/png',
+  '.webp': 'image/png',
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
@@ -72,6 +72,9 @@ async function prerender() {
   try {
     const page = await browser.newPage()
     await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 })
+    await page.emulateMediaFeatures([
+      { name: 'prefers-reduced-motion', value: 'reduce' },
+    ])
 
     for (const target of [
       { route: '/', output: 'index.html' },

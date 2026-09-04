@@ -1,0 +1,243 @@
+/* Capabilities */
+.capabilities {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: clamp(120px, 14vw, 200px) 0;
+  color: #f7f6f2;
+  background: #0d0e11;
+}
+.capabilities::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 88% 12%, rgba(20, 87, 255, .24), transparent 28%), radial-gradient(circle at 5% 78%, rgba(255, 91, 54, .16), transparent 23%);
+}
+.capabilities__intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.3fr .7fr; /* 标题宽度分配 */
+  column-gap: 8vw;
+  align-items: end;
+}
+.capabilities__intro .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 36px;
+  color: #7fa2ff;
+}
+/* 能力区主标题“从日常运算，到真正的进阶数学” */
+.capabilities__intro h2 {
+  max-width: 900px;
+  font-size: clamp(3.6rem, 6.2vw, 5.5rem);
+  line-height: 1;
+}
+/* 能力区主标题旁的介绍文字 */
+.capabilities__intro>p:not(.eyebrow) {
+  max-width: 530px;
+  padding-bottom: 9px;
+  color: rgba(255, 255, 255, .58);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+/* 能力区右上角“06 / CORE SYSTEMS”编号 */
+.capabilities__count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgba(255, 255, 255, .32);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: .12em;
+}
+.capabilities-marquee {
+  position: relative;
+  width: 100%;
+  margin: clamp(80px, 10vw, 140px) 0 80px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  transform: rotate(-2deg) scale(1.03);
+}
+.capabilities-marquee__track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+}
+/* 能力区横向滚动的大号描边文字 */
+.capabilities-marquee span {
+  display: block;
+  color: transparent;
+  padding: 13px 0 20px;
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 860;
+  line-height: 1;
+  letter-spacing: -.055em;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .36);
+}
+.capability-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 1.6vw, 22px);
+}
+.capability-card {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: 30px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .045);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .12);
+}
+/* 能力卡片左上角编号 */
+.capability-index {
+  color: rgba(255, 255, 255, .38);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+/* 能力卡片圆形数学图标及图标文字 */
+.capability-icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin-top: 56px;
+  place-items: center;
+  color: #101114;
+  background: #7fa2ff;
+  border-radius: 50%;
+  font-family: var(--font-math);
+  font-size: 2rem;
+  transition: transform 350ms var(--ease), border-radius 350ms var(--ease);
+}
+.capability-card:hover .capability-icon,
+.capability-card:focus-visible .capability-icon {
+  border-radius: 20% 50% 50% 50%;
+  transform: rotate(-10deg) scale(1.1);
+}
+.capability-card.accent-orange .capability-icon {
+  background: #ff8465;
+}
+.capability-card.accent-violet .capability-icon {
+  background: #a995ff;
+}
+.capability-card.accent-green .capability-icon {
+  background: #72dcb3;
+}
+/* 能力卡片标题 */
+.capability-card h3 {
+  margin-top: auto;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+/* 能力卡片说明文字 */
+.capability-card p {
+  max-width: 34ch;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, .52);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+.capability-card__line {
+  position: absolute;
+  inset: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  overflow: visible;
+  color: #7fa2ff;
+  pointer-events: none;
+}
+.capability-card__line path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: .75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 680ms var(--ease);
+}
+.capability-card.accent-orange .capability-card__line {
+  color: #ff8465;
+}
+.capability-card.accent-violet .capability-card__line {
+  color: #a995ff;
+}
+.capability-card.accent-green .capability-card__line {
+  color: #72dcb3;
+}
+.capability-card:hover .capability-card__line path,
+.capability-card:focus-visible .capability-card__line path {
+  stroke-dashoffset: 0;
+}
+@media (max-width: 900px) {
+
+  .capabilities__intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* 平板端与手机端：能力区主标题字号 */
+  .capabilities__intro h2 {
+    font-size: clamp(3.1rem, 8.5vw, 4.8rem);
+  }
+
+  .capabilities__intro>p:not(.eyebrow) {
+    padding: 0;
+  }
+
+  .capabilities__count {
+    display: none;
+  }
+
+  .capabilities-marquee {
+    margin: 75px 0 60px;
+  }
+
+  .capability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capability-card {
+    min-height: 340px;
+  }
+
+  .capability-icon {
+    margin-top: 45px;
+  }
+}
+@media (max-width: 700px) {
+
+  .capabilities {
+    padding: 110px 0;
+  }
+
+  /* 手机端：能力区主标题字号 */
+  .capabilities__intro h2 {
+    font-size: clamp(2.6rem, 10vw, 3.4rem);
+  }
+
+  /* 手机端：能力区滚动描边文字字号 */
+  .capabilities-marquee span {
+    font-size: 4rem;
+  }
+
+  .capability-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .capability-card {
+    min-height: 300px;
+    padding: 25px;
+    border-radius: 22px;
+  }
+
+  /* 手机端：能力卡片圆形图标尺寸 */
+  .capability-icon {
+    width: 66px;
+    height: 66px;
+    margin-top: 35px;
+  }
+}

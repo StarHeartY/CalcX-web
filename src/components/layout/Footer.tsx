@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="shell site-footer__grid">
         <div>
           <a className="brand brand--footer" href={locale === 'en' ? '/en/' : '/'}>
-            <img src="/images/app-icon.png" alt="" width="40" height="40" />
+            <img src="/images/app-icon.webp" alt="" width="40" height="40" />
             <span>Calculator<span>X</span></span>
           </a>
           <p>{footer.statement}</p>

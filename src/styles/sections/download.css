@@ -1,0 +1,191 @@
+/* Download */
+.download {
+  position: relative;
+  z-index: 7;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  color: #111216;
+  background: #e9ff5b;
+}
+.download::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(17, 18, 22, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 18, 22, .08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black, transparent 68%);
+}
+.download__orbit {
+  position: absolute;
+  width: min(76vw, 980px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(17, 18, 22, .18);
+  border-radius: 50%;
+}
+.download__orbit::before,
+.download__orbit::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed rgba(17, 18, 22, .14);
+  border-radius: inherit;
+}
+.download__orbit::after {
+  inset: 28%;
+}
+/* 下载区圆环上的数学符号 */
+.download__orbit span {
+  position: absolute;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  background: #111216;
+  border-radius: 50%;
+  color: #e9ff5b;
+  font-family: var(--font-math);
+}
+.download__orbit span:nth-child(1) {
+  top: 5%;
+  left: 30%;
+}
+.download__orbit span:nth-child(2) {
+  top: 42%;
+  right: -2%;
+}
+.download__orbit span:nth-child(3) {
+  bottom: 4%;
+  left: 42%;
+}
+.download__orbit span:nth-child(4) {
+  top: 48%;
+  left: -2%;
+}
+.download__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding-block: 110px;
+  text-align: center;
+}
+.download__inner .eyebrow {
+  justify-content: center;
+  color: #111216;
+}
+.download__inner .eyebrow-dot {
+  background: #111216;
+  box-shadow: 0 0 0 5px rgba(17, 18, 22, .12);
+}
+/* 下载区主标题 */
+.download h2 {
+  margin: 29px auto 0;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 1;
+}
+/* 下载区主标题下方介绍文字 */
+.download__description {
+  max-width: 630px;
+  margin: 32px auto 0;
+  color: rgba(17, 18, 22, .66);
+  font-size: 1.2rem;
+  line-height: 1.72;
+}
+.download__actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+}
+.store-button {
+  display: inline-flex;
+  min-height: 72px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 22px;
+  color: #111216;
+  background: white;
+  border: 1px solid rgba(17, 18, 22, .15);
+  border-radius: 24px;
+  box-shadow: 0 14px 28px rgba(17, 18, 22, .11);
+  transition: transform 180ms var(--ease);
+}
+.store-button:hover {
+  transform: translateY(-3px);
+}
+.store-button img {
+  width: 42px;
+  height: 42px;
+}
+.store-button span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* AppGallery 商店按钮上方小字 */
+.store-button small {
+  font-size: .7rem;
+  letter-spacing: .08em;
+}
+/* AppGallery 商店按钮主文字 */
+.store-button strong {
+  font-size: 1.1rem;
+}
+/* 下载按钮下方说明文字 */
+.download__footnote {
+  margin-top: 21px;
+  color: rgba(17, 18, 22, .55);
+  font-family: var(--font-sans);
+  font-size: .9rem;
+}
+/* 下载区底部版本信息 */
+.download__version {
+  display: block;
+  margin-top: 58px;
+  font-family: var(--font-sans);
+  font-size: .7rem;
+  letter-spacing: .14em;
+}
+@media (max-width: 900px) {
+
+  .download__orbit {
+    width: 120vw;
+  }
+
+  /* 平板端与手机端：下载区主标题字号 */
+  .download h2 {
+    font-size: clamp(4rem, 13vw, 7.4rem);
+  }
+}
+@media (max-width: 700px) {
+
+  .download__inner {
+    padding-block: 100px;
+  }
+
+  /* 手机端：下载区主标题字号 */
+  .download h2 {
+    font-size: 4.4rem;
+  }
+
+  .download__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download__actions .button,
+  .store-button {
+    width: 100%;
+  }
+
+  .download__orbit {
+    width: 180vw;
+  }
+
+  /* 手机端：下载区圆环数学符号尺寸 */
+  .download__orbit span {
+    width: 40px;
+    height: 40px;
+  }
+}

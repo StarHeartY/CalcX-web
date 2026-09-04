@@ -39,6 +39,8 @@ src/
 │   ├── layout/                # Header、Footer
 │   ├── sections/              # 主页的独立内容区块
 │   └── ui/                    # 可复用的展示与控制组件
+├── animations/
+│   └── gsap.ts                # GSAP、React Hook 与 ScrollTrigger 统一注册入口
 ├── data/
 │   ├── content.types.ts       # 双语内容的共享类型
 │   └── locales/               # 中文和英文内容对象
@@ -46,11 +48,20 @@ src/
 ├── i18n/                      # URL 语言判断与内容上下文
 └── styles/
     ├── tokens.css             # 颜色、间距等设计变量
-    ├── global.css             # 页面布局和组件样式
+    ├── global.css             # 样式聚合入口，按级联顺序导入下列文件
+    ├── base.css               # 浏览器基础、全局布局与通用文字
+    ├── components/            # 按钮、顶栏和页脚样式
+    ├── sections/              # 各主页区块及其响应式覆盖规则
     └── animations.css         # 动效及降级处理
 ```
 
+区块样式按页面职责拆分。每个 `sections/*.css` 文件同时保存该区块的桌面、平板、手机和减少动态效果规则，使同一选择器的响应式覆盖保持在一处。`global.css` 只维护导入顺序，不再直接承载页面规则。
+
 `public/` 中的内容会原样复制到构建产物，包括产品图片、图标、法律页面、站点地图和 robots.txt。`dist/` 是构建结果，不是源码入口。
+
+`src/animations/gsap.ts` 只负责注册和导出动效能力。需要编排动效的组件从该入口引用 `gsap`、`useGSAP` 或 `ScrollTrigger`，避免在多个组件中重复注册插件。
+
+具体动效通过 `useGSAP` 管理组件卸载时的清理，通过 `gsap.matchMedia()` 响应断点和 `prefers-reduced-motion`。桌面端由 `ScrollSmoother` 提供平滑滚动，Showcase 使用固定场景，Technology 把纵向滚动映射为横向计算管线；Experience 在进入视口后自动依次播放，不绑定后续滚动进度。移动端不保留长距离固定，预渲染声明减少动态效果偏好，各组件在该条件下直接呈现完整静态内容。
 
 ## 页面组合
 
@@ -61,14 +72,14 @@ src/
 | `Header` | 品牌、锚点导航、语言切换、主题切换与移动菜单 |
 | `HeroSection` | 产品定位、下载入口、源码入口和关键数字 |
 | `CapabilitiesSection` | 六组核心能力概览 |
-| `ShowcaseSection` | 可切换的四组产品场景与视觉展示 |
-| `ExperienceSection` | 触屏输入、原生交互与本地优先说明 |
-| `TechnologySection` | CalculatorX 应用本体的技术链路介绍 |
+| `ShowcaseSection` | 桌面固定后横向滚动四张产品卡片，移动端改为纵向排列 |
+| `ExperienceSection` | 以自动播放的公式求解场景说明触屏输入、原生交互与本地优先 |
+| `TechnologySection` | 横向滚动展示 CalculatorX 应用本体的技术链路 |
 | `OpenSourceSection` | 开源定位与外部链接 |
 | `DownloadSection` | AppGallery 和 Releases 获取入口 |
 | `Footer` | 文档、法律页面、反馈和版权信息 |
 
-区块之间没有共享的业务状态。当前主要交互状态只有移动菜单、展示标签页和主题选择，因此不需要额外的状态管理库。
+区块之间没有共享的业务状态。当前主要交互状态只有移动菜单和主题选择；滚动进度与场景生命周期由 GSAP 上下文管理，因此不需要额外的状态管理库。
 
 ## 内容与双语机制
 
@@ -137,7 +148,7 @@ flowchart LR
 1. `tsc -b` 检查 TypeScript 项目；
 2. Vite 以 `index.html` 和 `en/index.html` 为两个入口生成 `dist/`；
 3. `scripts/prerender.mjs` 在本地 4173 端口临时托管 `dist/`；
-4. Puppeteer 依次访问 `/` 和 `/en/`，等待网络空闲后把完整 DOM 写回对应 HTML；
+4. Puppeteer 以减少动态效果模式依次访问 `/` 和 `/en/`，等待网络空闲后把完整 DOM 写回对应 HTML；
 5. 临时浏览器和服务器关闭，`dist/` 成为最终部署目录。
 
 预渲染脚本优先读取 `PUPPETEER_EXECUTABLE_PATH`，随后检查 Windows 上常见的 Chrome 与 Edge 路径。在 CI 中，Puppeteer 可以使用依赖安装阶段准备的浏览器。
@@ -177,6 +188,7 @@ flowchart LR
 | 某个区块的交互或标记 | `src/components/sections/` |
 | 导航、页脚或主题按钮 | `src/components/layout/`、`src/components/ui/` |
 | 颜色、排版和响应式布局 | `src/styles/` |
+| GSAP 动效注册与 ScrollTrigger | `src/animations/gsap.ts` |
 | SEO 与分享摘要 | `index.html`、`en/index.html` |
 | 静态法律页和旧入口 | `public/` |
 | 多页面输出 | `vite.config.ts` |

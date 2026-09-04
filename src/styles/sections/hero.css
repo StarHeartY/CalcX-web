@@ -1,0 +1,457 @@
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(120px, 13vh, 160px) 0 42px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 72% 36%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 29%),
+    var(--bg);
+  background-size: 56px 56px, 56px 56px, auto, auto;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 65%, var(--bg));
+}
+.hero__mesh {
+  position: absolute;
+  top: 9%;
+  right: -10%;
+  width: min(70vw, 940px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--blue) 22%, transparent);
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 34px, color-mix(in srgb, var(--blue) 7%, transparent) 35px 36px);
+  opacity: .75;
+}
+/* 首页背景装饰公式 */
+.hero-equations {
+  position: absolute;
+  inset: 22% 0 auto;
+  display: flex;
+  justify-content: space-around;
+  color: var(--ink);
+  font-family: var(--font-math);
+  font-size: clamp(1.1rem, 2vw, 2.2rem);
+  opacity: .05;
+  transform: rotate(-8deg);
+}
+.hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(420px, .94fr);
+  gap: clamp(30px, 6vw, 110px);
+  align-items: center;
+  min-height: 660px;
+}
+.hero__copy {
+  position: relative;
+  z-index: 4;
+  max-width: 720px;
+}
+.hero__eyebrow {
+  margin-bottom: 24px;
+}
+/* 首页主标题“不只计算答案，更理解数学” */
+.hero h1 {
+  font-size: clamp(3rem, 5.6vw, 6.0rem);
+  line-height: 1;
+}
+.hero-title__mask {
+  display: block;
+  overflow: hidden;
+  padding: .08em .08em .12em 0;
+}
+.hero-title__line {
+  display: block;
+}
+.hero-title__line--accent {
+  color: var(--blue);
+}
+/* 首页主标题下方介绍文字 */
+.hero__description {
+  max-width: 610px;
+  margin-top: 30px;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  line-height: 1.8;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+/* 首页产品截图与装饰元素所在区域的高度 */
+.hero-visual {
+  position: relative;
+  height: min(70vh, 720px);
+  min-height: 610px;
+}
+.hero-visual__orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-visual__orbit::before,
+.hero-visual__orbit::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  background: var(--orange);
+}
+.hero-visual__orbit--one {
+  width: 620px;
+  height: 620px;
+}
+.hero-visual__orbit--one::before {
+  top: 13%;
+  left: 13%;
+}
+.hero-visual__orbit--one::after {
+  right: 4%;
+  bottom: 29%;
+  background: var(--blue);
+}
+.hero-visual__orbit--two {
+  width: 470px;
+  height: 470px;
+  border-style: dashed;
+  opacity: .52;
+}
+.hero-visual__orbit--two::before {
+  right: 22%;
+  bottom: 6%;
+  width: 7px;
+  height: 7px;
+}
+.hero-visual__orbit--two::after {
+  display: none;
+}
+/* 首页第一张产品截图：显示宽度与原图宽高比 */
+.hero-product-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: min(31vw, 350px);
+  min-width: 340px;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1424 / 2931;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotate(3deg);
+}
+
+.hero-product-frame {
+  width: 100%;
+  height: 100%;
+}
+.hero-phone {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.hero-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+.theme-image--dark {
+  display: none;
+}
+:root[data-theme="dark"] .theme-image--light:not(.theme-image--always) {
+  display: none;
+}
+:root[data-theme="dark"] .theme-image--dark {
+  display: block;
+}
+/* 首页产品截图旁悬浮卡片的内边距与外观 */
+.hero-float {
+  position: absolute;
+  z-index: 5;
+  padding: 18px 20px;
+  background: color-mix(in srgb, var(--surface-solid) 84%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(22px);
+}
+/* 首页截图旁悬浮卡片的小标签 */
+.hero-float span {
+  display: block;
+  color: var(--ink-faint);
+  font-family: var(--font-sans);
+  font-size: .58rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-float--result {
+  right: -2%;
+  bottom: 14%;
+  border-radius: 4px 22px 22px 22px;
+}
+/* 首页截图旁悬浮卡片的计算结果 */
+.hero-float--result strong {
+  display: block;
+  margin-top: 9px;
+}
+.hero-float--result strong img {
+  display: block;
+  width: 138px;
+  height: auto;
+}
+:root[data-theme="dark"] .hero-float--result strong img {
+  filter: invert(1);
+}
+.hero-float--graph {
+  top: 19%;
+  left: -5%;
+  width: 230px;
+  border-radius: 22px 22px 4px 22px;
+}
+.hero-float--graph svg {
+  width: 100%;
+  margin-top: 8px;
+  overflow: visible;
+}
+.hero-float--graph path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 3;
+}
+.hero-proof {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.hero-proof__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 14px;
+  padding: 18px 22px 8px 0;
+  border-right: 1px solid var(--line);
+}
+/* 首页底部产品数据左侧 01、02 等序号 */
+.hero-proof__item>span {
+  grid-row: span 2;
+  color: var(--ink-faint);
+  font-family: var(--font-sans);
+  font-size: .8rem;
+}
+/* 首页底部产品数据，例如“1.6.2”“5 类” */
+.hero-proof__item strong {
+  font-size: 1.3rem;
+  letter-spacing: -.04em;
+}
+/* 首页底部产品数据说明，例如“当前版本”“函数图像” */
+.hero-proof__item small {
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+/* 首页右侧滚动提示文字 */
+.hero-scroll {
+  position: absolute;
+  right: 18px;
+  bottom: 38px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--ink-faint);
+  font-family: var(--font-sans);
+  font-size: .52rem;
+  letter-spacing: .12em;
+  writing-mode: vertical-rl;
+}
+.hero-scroll i {
+  display: block;
+  width: 1px;
+  height: 52px;
+  background: currentColor;
+  animation: pulse-line 1.8s ease-in-out infinite;
+}
+@media (max-width: 1180px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, .82fr);
+    gap: 30px;
+  }
+
+  /* 中等桌面：首页主标题字号 */
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.3rem);
+  }
+
+  .hero-visual {
+    transform: scale(.9);
+  }
+}
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+    padding: 118px 0 40px;
+  }
+
+  .hero__mesh {
+    top: 35%;
+    right: -55%;
+    width: 150vw;
+  }
+
+  /* 平板端与手机端：首页背景装饰公式字号 */
+  .hero-equations {
+    top: 48%;
+    font-size: 1.1rem;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero__copy {
+    max-width: 760px;
+  }
+
+  /* 平板端与手机端：首页主标题字号 */
+  .hero h1 {
+    font-size: clamp(2.8rem, 9vw, 4.8rem);
+  }
+
+  .hero__description {
+    max-width: 640px;
+  }
+
+  /* 平板端与手机端：首页产品图片区高度 */
+  .hero-visual {
+    width: 100%;
+    height: 700px;
+    min-height: 0;
+    margin-top: 20px;
+    transform: none;
+  }
+
+  /* 平板端与手机端：首页第一张产品截图宽度 */
+  .hero-product-anchor {
+    width: 350px;
+    min-width: 0;
+  }
+
+  .hero-visual__orbit--one {
+    width: 580px;
+    height: 580px;
+  }
+
+  .hero-visual__orbit--two {
+    width: 430px;
+    height: 430px;
+  }
+
+  .hero-float--graph {
+    left: 1%;
+  }
+
+  .hero-float--result {
+    right: 1%;
+  }
+
+  .hero-proof {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 28px;
+  }
+
+  .hero-proof__item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .hero-proof__item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  /* 手机端：首页主标题字号 */
+  .hero h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    line-height: 1;
+  }
+
+  /* 手机端：首页介绍文字字号 */
+  .hero__description {
+    font-size: .93rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+  }
+
+  /* 手机端：首页产品图片区高度和宽度 */
+  .hero-visual {
+    height: 590px;
+    margin-inline: -5%;
+    width: 110%;
+  }
+
+  /* 手机端：首页第一张产品截图宽度 */
+  .hero-product-anchor {
+    width: 282px;
+  }
+
+  .hero-visual__orbit--one {
+    width: 450px;
+    height: 450px;
+  }
+
+  .hero-visual__orbit--two {
+    width: 340px;
+    height: 340px;
+  }
+
+  .hero-float {
+    padding: 13px 14px;
+  }
+
+  .hero-float--graph {
+    top: 14%;
+    left: -3%;
+    width: 172px;
+  }
+
+  .hero-float--result {
+    right: -1%;
+    bottom: 10%;
+  }
+
+  /* 手机端：首页悬浮卡片计算结果宽度 */
+  .hero-float--result strong img {
+    width: 110px;
+  }
+
+  .hero-proof__item {
+    padding: 16px 10px 10px 0;
+  }
+}

@@ -1,5 +1,7 @@
-@keyframes orbit-spin { to { transform: rotate(360deg); } }
-@keyframes panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse-line {
+  0%, 100% { transform: scaleY(.35); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -8,5 +10,12 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
+  }
+
+  #smooth-wrapper,
+  #smooth-content {
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
   }
 }

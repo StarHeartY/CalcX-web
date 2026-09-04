@@ -43,9 +43,9 @@ CalculatorX 相关内容分布在三个项目中：
 
 1. `HeroSection`：一句话定位、主要下载入口与关键产品数字；
 2. `CapabilitiesSection`：概览六组核心能力；
-3. `ShowcaseSection`：用四组场景深入解释精确计算、函数图像、方程与矩阵、汇率与历史；
-4. `ExperienceSection`：解释触屏公式输入、本地优先和原生交互；
-5. `TechnologySection`：介绍 CalculatorX 应用侧的 ArkUI、MathLive、N-API 与 C++ 计算链路；
+3. `ShowcaseSection`：通过固定滚动场景依次解释精确计算、函数图像、方程与矩阵、汇率与历史；
+4. `ExperienceSection`：以公式求解过程解释触屏输入、本地优先和原生交互；
+5. `TechnologySection`：用横向计算管线介绍 ArkUI、MathLive、N-API 与 C++ 计算链路；
 6. `OpenSourceSection`：连接开源属性、源码与架构资料；
 7. `DownloadSection`：汇总 AppGallery 与 GitHub Releases 获取方式。
 

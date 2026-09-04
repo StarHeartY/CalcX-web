@@ -1,0 +1,225 @@
+/* Header */
+/* 顶栏默认高度：上下 padding 与内部最小高度共同决定总高度 */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 200;
+  padding: 18px 0;
+  border-bottom: 1px solid transparent;
+  transition: padding 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+/* 页面滚动后的顶栏高度 */
+.site-header.is-scrolled {
+  padding: 10px 0;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  border-color: var(--line);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+/* 顶栏内部最小高度 */
+.site-header__inner {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+}
+.site-header__progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+/* 顶栏 CalculatorX 品牌文字 */
+.brand {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 840;
+  letter-spacing: -.04em;
+}
+.brand img {
+  border-radius: 10px;
+}
+.brand span span {
+  color: var(--blue);
+}
+.site-header__panel {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin-left: 64px;
+}
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/* 顶栏“能力”“体验”“技术”等导航文字 */
+.primary-nav a {
+  position: relative;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  font-weight: 680;
+}
+.primary-nav a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms var(--ease);
+}
+.primary-nav a:hover {
+  color: var(--ink);
+}
+.primary-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+/* 顶栏右侧语言与主题圆形按钮尺寸 */
+.language-button,
+.icon-button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* 顶栏语言切换按钮文字 */
+.language-button {
+  font-family: var(--font-sans);
+  font-size: .9rem;
+  font-weight: 760;
+}
+/* 顶栏主题切换按钮图标 */
+.icon-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.menu-button {
+  display: none;
+}
+@media (max-width: 900px) {
+
+  /* 平板端与手机端：顶栏上下留白 */
+  .site-header {
+    padding: 12px 0;
+  }
+
+  /* 平板端与手机端：顶栏内部高度 */
+  .site-header__inner {
+    min-height: 42px;
+  }
+
+  .site-header__panel {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    padding: 108px 24px 28px;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--bg) 95%, transparent);
+    backdrop-filter: blur(28px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 200ms ease, transform 240ms var(--ease), visibility 200ms;
+  }
+
+  .site-header__panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .primary-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* 平板端与手机端：展开菜单中的导航文字 */
+  .primary-nav a {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.45rem;
+    letter-spacing: -.04em;
+  }
+
+  .header-actions {
+    width: 100%;
+    margin: auto 0 0;
+  }
+
+  .header-actions .button {
+    margin-left: auto;
+  }
+
+  /* 平板端与手机端：汉堡菜单圆形按钮尺寸 */
+  .menu-button {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    padding: 0;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    position: absolute;
+    width: 16px;
+    height: 1px;
+    background: var(--ink);
+    transition: transform 200ms ease;
+  }
+
+  .menu-button span:first-child {
+    transform: translateY(-3px);
+  }
+
+  .menu-button span:last-child {
+    transform: translateY(3px);
+  }
+
+  .menu-button[aria-expanded="true"] span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .menu-button[aria-expanded="true"] span:last-child {
+    transform: rotate(-45deg);
+  }
+}
