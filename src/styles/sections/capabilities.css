@@ -17,7 +17,7 @@
 .capabilities__intro {
   position: relative;
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.3fr .7fr; /* 标题宽度分配 */
   column-gap: 8vw;
   align-items: end;
 }
@@ -38,7 +38,6 @@
   padding-bottom: 9px;
   color: rgba(255, 255, 255, .58);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.8;
 }
 /* 能力区右上角“06 / CORE SYSTEMS”编号 */
 .capabilities__count {
@@ -47,7 +46,7 @@
   top: 0;
   color: rgba(255, 255, 255, .32);
   font-family: var(--font-mono);
-  font-size: .62rem;
+  font-size: 1rem;
   letter-spacing: .12em;
 }
 .capabilities-marquee {
@@ -96,7 +95,7 @@
 .capability-index {
   color: rgba(255, 255, 255, .38);
   font-family: var(--font-mono);
-  font-size: .68rem;
+  font-size: 1rem;
 }
 /* 能力卡片圆形数学图标及图标文字 */
 .capability-icon {
@@ -137,7 +136,7 @@
   max-width: 34ch;
   margin-top: 15px;
   color: rgba(255, 255, 255, .52);
-  font-size: .84rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 .capability-card__line {
