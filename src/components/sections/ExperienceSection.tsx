@@ -22,9 +22,7 @@ export default function ExperienceSection() {
       timeline
         .from('.experience__title', { y: 60, autoAlpha: 0, duration: 0.6 })
         .from('.formula-demo', { rotateY: -14, rotateZ: 5, scale: 0.86, autoAlpha: 0, duration: 0.8 }, '-=0.28')
-        .from('.formula-demo__input', { y: 30, autoAlpha: 0, duration: 0.4 }, '-=0.2')
-        .from('.formula-demo__line', { scaleX: 0, transformOrigin: 'left', duration: 0.35 }, '-=0.08')
-        .from('.formula-demo__output', { y: 35, scale: 0.7, autoAlpha: 0, duration: 0.45 }, '-=0.08')
+        .from('.formula-demo__equation', { y: 30, scale: 0.88, autoAlpha: 0, duration: 0.6 }, '-=0.2')
         .from('.formula-demo__keys span', { y: 30, autoAlpha: 0, stagger: 0.05, duration: 0.22 }, '-=0.22')
         .from('.experience-list article', { x: -35, autoAlpha: 0, duration: 0.42, stagger: 0.22 }, '-=0.38')
         .to('.formula-demo', { rotateZ: -2, y: -20, duration: 0.6, ease: 'power2.out' }, '-=0.18')
@@ -59,9 +57,12 @@ export default function ExperienceSection() {
           </div>
           <div className="formula-demo__canvas">
             <span className="formula-demo__caption">MATH, IN ITS NATURAL FORM.</span>
-            <div className="formula-demo__input">{experience.formulaInput}</div>
-            <div className="formula-demo__line" />
-            <div className="formula-demo__output"><span>=</span>{experience.formulaOutput}</div>
+            <div className="formula-demo__equation">
+              <img
+                src="/images/svg/lim.svg"
+                alt={`${experience.formulaInput} = ${experience.formulaOutput}`}
+              />
+            </div>
           </div>
           <div className="formula-demo__functions" aria-hidden="true"><span>sin</span><span>cos</span><span>tan</span><span>∫</span><span>∑</span></div>
           <div className="formula-demo__keys" aria-hidden="true">

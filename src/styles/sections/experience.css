@@ -145,33 +145,15 @@
   font-size: .52rem;
   letter-spacing: .1em;
 }
-/* 演示计算器输入公式 */
-.formula-demo__input {
-  font-family: var(--font-math);
-  font-size: clamp(2.2rem, 4.2vw, 4.6rem);
-  letter-spacing: -.04em;
-}
-.formula-demo__line {
-  width: 100%;
-  height: 2px;
-  margin: 24px 0;
-  background: #111216;
-}
-/* 演示计算器主要计算结果 */
-.formula-demo__output {
+/* 演示计算器完整排版公式 */
+.formula-demo__equation {
   display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  gap: 40px;
-  color: var(--blue);
-  font-family: var(--font-math);
-  font-size: clamp(4rem, 8vw, 8rem);
-  line-height: .8;
+  justify-content: center;
 }
-/* 演示计算器结果后的辅助文字 */
-.formula-demo__output span {
-  color: #111216;
-  font-size: .32em;
+.formula-demo__equation img {
+  display: block;
+  width: min(100%, 480px);
+  height: auto;
 }
 .formula-demo__functions {
   display: grid;
@@ -275,14 +257,9 @@
     padding: 42px 26px 28px;
   }
 
-  /* 手机端：演示计算器输入公式字号 */
-  .formula-demo__input {
-    font-size: 2rem;
-  }
-
-  /* 手机端：演示计算器计算结果字号 */
-  .formula-demo__output {
-    font-size: 4.5rem;
+  /* 手机端：演示计算器公式宽度 */
+  .formula-demo__equation img {
+    width: min(100%, 390px);
   }
 
   .formula-demo__functions span {

@@ -81,7 +81,7 @@ export default function HeroSection() {
           </div>
           <div className="hero-float hero-float--result">
             <span>{hero.visualBadge}</span>
-            <strong>√8 = 2√2</strong>
+            <strong><img src="/images/svg/sqrt8.svg" alt="√8 = 2√2" /></strong>
           </div>
           <div className="hero-float hero-float--graph" aria-hidden="true">
             <span>{hero.floatingFormula}</span>

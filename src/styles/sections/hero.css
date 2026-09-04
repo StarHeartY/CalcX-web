@@ -207,9 +207,14 @@
 .hero-float--result strong {
   display: block;
   margin-top: 9px;
-  font-family: var(--font-math);
-  font-size: 1.55rem;
-  font-weight: 500;
+}
+.hero-float--result strong img {
+  display: block;
+  width: 138px;
+  height: auto;
+}
+:root[data-theme="dark"] .hero-float--result strong img {
+  filter: invert(1);
 }
 .hero-float--graph {
   top: 19%;
@@ -441,9 +446,9 @@
     bottom: 10%;
   }
 
-  /* 手机端：首页悬浮卡片计算结果字号 */
-  .hero-float--result strong {
-    font-size: 1.15rem;
+  /* 手机端：首页悬浮卡片计算结果宽度 */
+  .hero-float--result strong img {
+    width: 110px;
   }
 
   .hero-proof__item {
