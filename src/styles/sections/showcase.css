@@ -62,13 +62,14 @@
   gap: 10px;
   color: var(--ink-faint);
   font-family: var(--font-mono);
-  font-size: .57rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 .showcase-index small {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-family: var(--font-sans);
 }
 .showcase-index i {
   position: relative;
