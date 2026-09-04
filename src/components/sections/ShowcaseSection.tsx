@@ -38,7 +38,7 @@ export default function ShowcaseSection() {
         scrollTrigger: {
           trigger: root.current,
           start: 'top top',
-          end: () => `+=${distance() * 1.35}`,
+          end: () => `+=${distance() * 0.7}`,
           pin: true,
           scrub: 1,
           anticipatePin: 1,
