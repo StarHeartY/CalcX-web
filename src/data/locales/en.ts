@@ -19,7 +19,7 @@ const en: SiteContent = {
   hero: {
     eyebrow: 'Built for HarmonyOS NEXT',
     titleBefore: 'More than answers. ',
-    titleAccent: 'Uunderstand math better.',
+    titleAccent: 'Understand math better.',
     titleAfter: '',
     description: 'Exact symbolic computation, equations, matrices, graphing, and currency conversion — CalculatorX brings everyday arithmetic and advanced math into one fluid, native workspace.',
     primaryAction: 'Get it on AppGallery',
