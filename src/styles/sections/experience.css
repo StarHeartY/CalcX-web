@@ -184,7 +184,7 @@
   place-items: center;
   background: #ebece9;
   border: 1px solid rgba(17, 18, 22, .08);
-  border-radius: 16px;
+  border-radius: 13px;
   font-family: var(--font-sans);
   font-size: 1.1rem;
 }
@@ -279,11 +279,11 @@
 
   /* 手机端：演示计算器公式宽度 */
   .formula-demo__equation img {
-    width: min(85%, 290px);
+    width: min(100%, 320px);
   }
 
   .formula-demo__result {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 
   .formula-demo__functions span {
@@ -305,4 +305,8 @@
     border-radius: 10px;
     font-size: .68rem;
   }
+    .formula-demo__keys span:nth-child(3),
+    .formula-demo__keys span:nth-child(4) {
+      font-size: 1rem;
+    }
 }
