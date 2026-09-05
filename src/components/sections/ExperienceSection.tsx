@@ -22,7 +22,8 @@ export default function ExperienceSection() {
       timeline
         .from('.experience__title', { y: 60, autoAlpha: 0, duration: 0.6 })
         .from('.formula-demo', { rotateY: -14, rotateZ: 5, scale: 0.86, autoAlpha: 0, duration: 0.8 }, '-=0.28')
-        .from('.formula-demo__equation', { y: 30, scale: 0.88, autoAlpha: 0, duration: 0.6 }, '-=0.2')
+        .from('.formula-demo__equation img', { y: 30, autoAlpha: 0, duration: 0.45 }, '-=0.2')
+        .from('.formula-demo__result', { y: 28, scale: 0.72, autoAlpha: 0, duration: 0.45 }, '-=0.12')
         .from('.formula-demo__keys span', { y: 30, autoAlpha: 0, stagger: 0.05, duration: 0.22 }, '-=0.22')
         .from('.experience-list article', { x: -35, autoAlpha: 0, duration: 0.42, stagger: 0.22 }, '-=0.38')
         .to('.formula-demo', { rotateZ: -2, y: -20, duration: 0.6, ease: 'power2.out' }, '-=0.18')
@@ -60,16 +61,17 @@ export default function ExperienceSection() {
             <div className="formula-demo__equation">
               <img
                 src="/images/svg/lim.svg"
-                alt={`${experience.formulaInput} = ${experience.formulaOutput}`}
+                alt={experience.formulaInput}
               />
+              <div className="formula-demo__result"><span>=</span>{experience.formulaOutput}</div>
             </div>
           </div>
-          <div className="formula-demo__functions" aria-hidden="true"><span>sin</span><span>cos</span><span>tan</span><span>∫</span><span>∑</span></div>
           <div className="formula-demo__keys" aria-hidden="true">
-            {['⇧', 'R/D', '←', '→', 'S⇄D', '='].map((key, index) => (
-              <span className={index === 0 ? 'key-orange' : index === 5 ? 'key-blue' : ''} key={key}>{key}</span>
+            {['⇧Shift', 'R/D', '⇦', '⇨', 'S⇄D'].map((key, index) => (
+              <span className={index === 0 ? 'key-orange' : ''} key={key}>{key}</span>
             ))}
           </div>
+          <div className="formula-demo__functions" aria-hidden="true"><span>sin</span><span>cos</span><span>tan</span><span>∫</span><span>∑</span><span className="key-blue">=</span></div>
         </div>
       </div>
     </section>

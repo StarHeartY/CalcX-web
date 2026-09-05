@@ -358,7 +358,7 @@
 
   /* 手机端：产品展示区主标题字号 */
   .showcase-heading h2 {
-    font-size: 3.3rem;
+    font-size: 2.8rem;
   }
 
   .showcase-heading>p:last-child {
@@ -399,6 +399,6 @@
 
   /* 手机端：产品展示场景标题字号 */
   .showcase-card__copy h3 {
-    font-size: 3.45rem;
+    font-size: 2.5rem;
   }
 }
